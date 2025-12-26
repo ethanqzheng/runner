@@ -121,6 +121,8 @@ jobs:
         with:
           fetch-depth: 1
           persist-credentials: false
+      - name: Setup YQ
+        uses: mikefarah/yq@v4
       - name: Expand Matrix
         id: expand-matrix
         env:
