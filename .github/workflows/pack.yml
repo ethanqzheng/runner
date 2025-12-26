@@ -101,9 +101,10 @@ on:
         default: false
 
 env:
-  INPUT_USERNAME: gpustack
+  INPUT_REGISTRY: swr.cn-east-3.myhuaweicloud.com
+  INPUT_USERNAME: ${{ secrets.CI_SWR_USERNAME }}
   INPUT_PASSWORD: ${{ secrets.CI_DOCKERHUB_PASSWORD }}
-  INPUT_NAMESPACE: gpustack
+  INPUT_NAMESPACE: cloud-mdgx
   INPUT_REPOSITORY: runner
   INPUT_CACHE_REPOSITORY: runner-build-cache
 
@@ -169,10 +170,11 @@ jobs:
             --allow-insecure-entitlement=security.insecure
             --oci-worker-net=host
             --oci-worker-gc-keepstorage=204800
-      - name: Login DockerHub
+      - name: Login SWR Registry
         if: ${{ github.event.inputs.dry_run == 'false' }}
         uses: docker/login-action@v3
         with:
+          registry: ${{ env.INPUT_REGISTRY }}
           username: ${{ env.INPUT_USERNAME }}
           password: ${{ env.INPUT_PASSWORD }}
       - name: Get Metadata
@@ -190,7 +192,7 @@ jobs:
 
           # Export tags to GH output.
           echo "tags<<EOF" >> $GITHUB_OUTPUT
-          echo "${INPUT_NAMESPACE}/${INPUT_REPOSITORY}:${INPUT_PLATFORM_TAG}" >> $GITHUB_OUTPUT
+          echo "${INPUT_REGISTRY}/${INPUT_NAMESPACE}/${INPUT_REPOSITORY}:${INPUT_PLATFORM_TAG}" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
           # Export build_args to GH output.
@@ -204,7 +206,7 @@ jobs:
           echo "cache_from<<EOF" >> $GITHUB_OUTPUT
           if [[ "${INPUT_WITH_CACHE}" == "true" ]]; then
             for tag_cache in ${INPUT_PLATFORM_TAG_CACHE}; do
-              echo "type=registry,ref=${INPUT_NAMESPACE}/${INPUT_CACHE_REPOSITORY}:${tag_cache}" >> $GITHUB_OUTPUT
+              echo "type=registry,ref=${INPUT_REGISTRY}/${INPUT_NAMESPACE}/${INPUT_CACHE_REPOSITORY}:${tag_cache}" >> $GITHUB_OUTPUT
             done
           fi
           echo "EOF" >> $GITHUB_OUTPUT
@@ -213,7 +215,7 @@ jobs:
           echo "cache_to<<EOF" >> $GITHUB_OUTPUT
           if [[ -z "${INPUT_POST_OPERATION}" ]]; then
             for tag_cache in ${INPUT_PLATFORM_TAG_CACHE}; do
-              echo "type=registry,ignore-error=true,mode=max,compression=gzip,ref=${INPUT_NAMESPACE}/${INPUT_CACHE_REPOSITORY}:${tag_cache}" >> $GITHUB_OUTPUT
+              echo "type=registry,ignore-error=true,mode=max,compression=gzip,ref=${INPUT_REGISTRY}/${INPUT_NAMESPACE}/${INPUT_CACHE_REPOSITORY}:${tag_cache}" >> $GITHUB_OUTPUT
             done
           fi
           echo "EOF" >> $GITHUB_OUTPUT
@@ -252,9 +254,10 @@ jobs:
       - build
     runs-on: ubuntu-22.04
     steps:
-      - name: Login DockerHub
+      - name: Login SWR Registry
         uses: docker/login-action@v3
         with:
+          registry: ${{ env.INPUT_REGISTRY }}
           username: ${{ env.INPUT_USERNAME }}
           password: ${{ env.INPUT_PASSWORD }}
       - name: Manifest
@@ -269,13 +272,13 @@ jobs:
           for TAG in $(echo "${INPUT_MANIFEST_JOBS}" | jq -r 'keys[]'); do
               PLATFORM_TAGS="$(echo "${INPUT_MANIFEST_JOBS}" | jq -r \
                 --arg tag "${TAG}" \
-                --arg repo "${INPUT_NAMESPACE}/${INPUT_REPOSITORY}" \
+                --arg repo "${INPUT_REGISTRY}/${INPUT_NAMESPACE}/${INPUT_REPOSITORY}" \
                 '.[$tag] | map($repo + ":" + .) | join(" ")')"
-              echo "[INFO]: Creating manifest '${INPUT_NAMESPACE}/${INPUT_REPOSITORY}:${TAG}' with '${PLATFORM_TAGS}'"
-              docker manifest create --amend "${INPUT_NAMESPACE}/${INPUT_REPOSITORY}:${TAG}" ${PLATFORM_TAGS}
-              docker manifest inspect "${INPUT_NAMESPACE}/${INPUT_REPOSITORY}:${TAG}"
-              echo "[INFO]: Pushing manifest '${INPUT_NAMESPACE}/${INPUT_REPOSITORY}:${TAG}'"
-              docker manifest push --purge "${INPUT_NAMESPACE}/${INPUT_REPOSITORY}:${TAG}"
+              echo "[INFO]: Creating manifest '${INPUT_REGISTRY}/${INPUT_NAMESPACE}/${INPUT_REPOSITORY}:${TAG}' with '${PLATFORM_TAGS}'"
+              docker manifest create --amend "${INPUT_REGISTRY}/${INPUT_NAMESPACE}/${INPUT_REPOSITORY}:${TAG}" ${PLATFORM_TAGS}
+              docker manifest inspect "${INPUT_REGISTRY}/${INPUT_NAMESPACE}/${INPUT_REPOSITORY}:${TAG}"
+              echo "[INFO]: Pushing manifest '${INPUT_REGISTRY}/${INPUT_NAMESPACE}/${INPUT_REPOSITORY}:${TAG}'"
+              docker manifest push --purge "${INPUT_REGISTRY}/${INPUT_NAMESPACE}/${INPUT_REPOSITORY}:${TAG}"
           done
 
   # Submit a PR to merge the runner.

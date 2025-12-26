@@ -9,7 +9,7 @@ ARG VLLM_DEEPGEMM_VERSION=2.1.1.post3
 # Stage vLLM Build DeepGEMM
 #
 
-FROM gpustack/runner:cuda${CUDA_VERSION}-vllm${VLLM_VERSION} AS vllm-build-deepgemm
+FROM cloud-mdgx/runner:cuda${CUDA_VERSION}-vllm${VLLM_VERSION} AS vllm-build-deepgemm
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
 ARG TARGETPLATFORM
@@ -77,7 +77,7 @@ EOF
 # Stage vLLM Prepare
 #
 
-FROM gpustack/runner:cuda${CUDA_VERSION}-vllm${VLLM_VERSION} AS vllm-prepare
+FROM cloud-mdgx/runner:cuda${CUDA_VERSION}-vllm${VLLM_VERSION} AS vllm-prepare
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
 ARG TARGETPLATFORM

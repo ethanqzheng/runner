@@ -2,7 +2,7 @@ ARG CMAKE_MAX_JOBS
 ARG CUDA_VERSION=12.8
 ARG SGLANG_VERSION=0.5.6.post2
 
-FROM gpustack/runner:cuda${CUDA_VERSION}-sglang${SGLANG_VERSION} AS sglang
+FROM cloud-mdgx/runner:cuda${CUDA_VERSION}-sglang${SGLANG_VERSION} AS sglang
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
 ARG TARGETPLATFORM

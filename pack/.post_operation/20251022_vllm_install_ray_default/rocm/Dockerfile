@@ -2,7 +2,7 @@ ARG CMAKE_MAX_JOBS
 ARG ROCM_VERSION=6.3
 ARG VLLM_VERSION=0.10.0
 
-FROM gpustack/runner:rocm${ROCM_VERSION}-vllm${VLLM_VERSION} AS vllm
+FROM cloud-mdgx/runner:rocm${ROCM_VERSION}-vllm${VLLM_VERSION} AS vllm
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
 ARG TARGETPLATFORM

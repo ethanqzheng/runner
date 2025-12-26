@@ -5,7 +5,7 @@ ARG NVIDIA_GDRCOPY_VERSION=2.4.1
 ARG NVIDIA_HPCX_VERSION=2.21.3
 ARG AWS_EFA_VERSION=1.43.3
 
-FROM gpustack/runner:cuda${CUDA_VERSION}-vllm${VLLM_VERSION} AS vllm-build
+FROM cloud-mdgx/runner:cuda${CUDA_VERSION}-vllm${VLLM_VERSION} AS vllm-build
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
 ARG TARGETPLATFORM

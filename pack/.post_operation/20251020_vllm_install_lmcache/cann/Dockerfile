@@ -4,7 +4,7 @@ ARG CANN_ARCHS=910b
 ARG VLLM_VERSION=0.9.1
 ARG VLLM_LMCACHE_VERSION=0.3.3
 
-FROM gpustack/runner:cann${CANN_VERSION}-${CANN_ARCHS}-vllm${VLLM_VERSION} AS vllm
+FROM cloud-mdgx/runner:cann${CANN_VERSION}-${CANN_ARCHS}-vllm${VLLM_VERSION} AS vllm
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
 ARG TARGETPLATFORM
