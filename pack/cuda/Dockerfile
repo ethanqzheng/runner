@@ -94,15 +94,15 @@ ARG PYTHON_VERSION=3.12
 ARG CMAKE_MAX_JOBS
 ARG CUDA_VERSION=12.9.1
 ARG CUDA_ARCHS
-ARG VOXBOX_BASE_IMAGE=gpustack/runner:cuda${CUDA_VERSION}-python${PYTHON_VERSION}
+ARG VOXBOX_BASE_IMAGE=cloud-mdgx/runner:cuda${CUDA_VERSION}-python${PYTHON_VERSION}
 ARG VOXBOX_VERSION=0.0.21
 ARG VOXBOX_TORCH_VERSION=2.7.1
 ARG VOXBOX_TORCH_CUDA_VERSION=${CUDA_VERSION}
-ARG VLLM_BASE_IMAGE=gpustack/runner:cuda${CUDA_VERSION}-python${PYTHON_VERSION}
+ARG VLLM_BASE_IMAGE=cloud-mdgx/runner:cuda${CUDA_VERSION}-python${PYTHON_VERSION}
 ARG VLLM_VERSION=0.13.0
 ARG VLLM_TORCH_VERSION=2.9.0
 ARG VLLM_TORCH_CUDA_VERSION=${CUDA_VERSION}
-ARG VLLM_BUILD_BASE_IMAGE=gpustack/runner:cuda${VLLM_TORCH_CUDA_VERSION}-python${PYTHON_VERSION}
+ARG VLLM_BUILD_BASE_IMAGE=cloud-mdgx/runner:cuda${VLLM_TORCH_CUDA_VERSION}-python${PYTHON_VERSION}
 ARG VLLM_NVIDIA_GDRCOPY_VERSION=2.5.1
 ARG VLLM_NVIDIA_HPCX_VERSION=2.24.1_cuda12
 ARG VLLM_NVIDIA_NVSHMEM_VERSION=3.4.5
@@ -123,7 +123,7 @@ ARG SGLANG_KERNEL_VERSION=0.3.19
 # Stage Bake Runtime
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=gpustack/runner:cuda${CUDA_VERSION%.*}-python${PYTHON_VERSION}-linux-amd64 --target=runtime pack/cuda
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=cloud-mdgx/runner:cuda${CUDA_VERSION%.*}-python${PYTHON_VERSION}-linux-amd64 --target=runtime pack/cuda
 #
 
 FROM nvidia/cuda:${CUDA_VERSION}-cudnn-devel-ubuntu22.04 AS runtime
@@ -349,7 +349,7 @@ ENV CUDA_HOME="/usr/local/cuda" \
 # Stage VoxBox
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=gpustack/runner:cuda${CUDA_VERSION%.*}-voxbox-linux-amd64 --target=voxbox pack/cuda
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=cloud-mdgx/runner:cuda${CUDA_VERSION%.*}-voxbox-linux-amd64 --target=voxbox pack/cuda
 #
 
 FROM ${VOXBOX_BASE_IMAGE} AS voxbox
@@ -436,7 +436,7 @@ ENTRYPOINT [ "tini", "--" ]
 # Stage vLLM Build
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=gpustack/runner:cuda${CUDA_VERSION%.*}-vllm-build-linux-amd64 --target=vllm-build pack/cuda
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=cloud-mdgx/runner:cuda${CUDA_VERSION%.*}-vllm-build-linux-amd64 --target=vllm-build pack/cuda
 #
 
 FROM ${VLLM_BUILD_BASE_IMAGE} AS vllm-build
@@ -505,7 +505,7 @@ EOF
 # Stage vLLM Build GDRCopy
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=gpustack/runner:cuda${CUDA_VERSION%.*}-vllm-build-gdrcopy-linux-amd64 --target=vllm-build-gdrcopy pack/cuda
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=cloud-mdgx/runner:cuda${CUDA_VERSION%.*}-vllm-build-gdrcopy-linux-amd64 --target=vllm-build-gdrcopy pack/cuda
 #
 
 FROM vllm-build AS vllm-build-gdrcopy
@@ -554,7 +554,7 @@ EOF
 # Stage vLLM Build FlashAttention
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=gpustack/runner:cuda${CUDA_VERSION%.*}-vllm-build-flashattention-linux-amd64 --target=vllm-build-flashattention pack/cuda
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=cloud-mdgx/runner:cuda${CUDA_VERSION%.*}-vllm-build-flashattention-linux-amd64 --target=vllm-build-flashattention pack/cuda
 #
 
 FROM vllm-build AS vllm-build-flashattention
@@ -628,7 +628,7 @@ EOF
 # Stage vLLM Build FlashInfer
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=gpustack/runner:cuda${CUDA_VERSION%.*}-vllm-build-flashinfer-linux-amd64 --target=vllm-build-flashinfer pack/cuda
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=cloud-mdgx/runner:cuda${CUDA_VERSION%.*}-vllm-build-flashinfer-linux-amd64 --target=vllm-build-flashinfer pack/cuda
 #
 
 FROM vllm-build AS vllm-build-flashinfer
@@ -706,7 +706,7 @@ EOF
 # Stage vLLM Build DeepGEMM
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=gpustack/runner:cuda${CUDA_VERSION%.*}-vllm-build-deepgemm-linux-amd64 --target=vllm-build-deepgemm pack/cuda
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=cloud-mdgx/runner:cuda${CUDA_VERSION%.*}-vllm-build-deepgemm-linux-amd64 --target=vllm-build-deepgemm pack/cuda
 #
 
 FROM vllm-build AS vllm-build-deepgemm
@@ -771,7 +771,7 @@ EOF
 # Stage vLLM Build EP Kernels
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=gpustack/runner:cuda${CUDA_VERSION%.*}-vllm-build-epkernels-linux-amd64 --target=vllm-build-epkernels pack/cuda
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=cloud-mdgx/runner:cuda${CUDA_VERSION%.*}-vllm-build-epkernels-linux-amd64 --target=vllm-build-epkernels pack/cuda
 #
 
 FROM vllm-build AS vllm-build-epkernels
@@ -814,7 +814,7 @@ EOF
 # Stage vLLM Build EP Kenerls: DeepEP
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=gpustack/runner:cuda${CUDA_VERSION%.*}-vllm-build-epkernels-deepep-linux-amd64 --target=vllm-build-epkernels-deepep pack/cuda
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=cloud-mdgx/runner:cuda${CUDA_VERSION%.*}-vllm-build-epkernels-deepep-linux-amd64 --target=vllm-build-epkernels-deepep pack/cuda
 #
 
 FROM vllm-build-epkernels AS vllm-build-epkernels-deepep
@@ -884,7 +884,7 @@ EOF
 # Stage vLLM Build EP Kenerls: PPLX
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=gpustack/runner:cuda${CUDA_VERSION%.*}-vllm-build-epkernels-pplx-linux-amd64 --target=vllm-build-epkernels-pplx pack/cuda
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=cloud-mdgx/runner:cuda${CUDA_VERSION%.*}-vllm-build-epkernels-pplx-linux-amd64 --target=vllm-build-epkernels-pplx pack/cuda
 #
 
 FROM vllm-build-epkernels AS vllm-build-epkernels-pplx
@@ -950,7 +950,7 @@ EOF
 # Stage vLLM Build vLLM
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=gpustack/runner:cuda${CUDA_VERSION%.*}-vllm-build-vllm-linux-amd64 --target=vllm-build-vllm pack/cuda
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=cloud-mdgx/runner:cuda${CUDA_VERSION%.*}-vllm-build-vllm-linux-amd64 --target=vllm-build-vllm pack/cuda
 #
 
 FROM vllm-build AS vllm-build-vllm
@@ -1012,7 +1012,7 @@ EOF
 # Stage vLLM Build LMCache
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=gpustack/runner:cuda${CUDA_VERSION%.*}-vllm-build-lmcache-linux-amd64 --target=vllm-build-lmcache pack/cuda
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=cloud-mdgx/runner:cuda${CUDA_VERSION%.*}-vllm-build-lmcache-linux-amd64 --target=vllm-build-lmcache pack/cuda
 #
 
 FROM vllm-build AS vllm-build-lmcache
@@ -1076,7 +1076,7 @@ EOF
 # Stage vLLM
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=gpustack/runner:cuda${CUDA_VERSION%.*}-vllm${VLLM_VERSION}-linux-amd64 --target=vllm pack/cuda
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=cloud-mdgx/runner:cuda${CUDA_VERSION%.*}-vllm${VLLM_VERSION}-linux-amd64 --target=vllm pack/cuda
 #
 
 FROM ${VLLM_BASE_IMAGE} AS vllm
@@ -1471,7 +1471,7 @@ ENTRYPOINT [ "tini", "--" ]
 # Stage SGLang Build
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=gpustack/runner:cuda${CUDA_VERSION%.*}-sglang-build-linux-amd64 --target=sglang-build pack/cuda
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=cloud-mdgx/runner:cuda${CUDA_VERSION%.*}-sglang-build-linux-amd64 --target=sglang-build pack/cuda
 #
 
 FROM ${SGLANG_BUILD_BASE_IMAGE} AS sglang-build
@@ -1487,7 +1487,7 @@ ENV UV_SYSTEM_PYTHON=1 \
 # Stage SGLang Build SGLang
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=gpustack/runner:cuda${CUDA_VERSION%.*}-sglang-build-sglang-linux-amd64 --target=sglang-build-sglang pack/cuda
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=cloud-mdgx/runner:cuda${CUDA_VERSION%.*}-sglang-build-sglang-linux-amd64 --target=sglang-build-sglang pack/cuda
 #
 
 FROM sglang-build AS sglang-build-sglang
@@ -1568,7 +1568,7 @@ EOF
 # Stage SGLang Build SGLang Router
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=gpustack/runner:cuda${CUDA_VERSION%.*}-sglang-build-sglangrouter-linux-amd64 --target=sglang-build-sglangrouter pack/cuda
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=cloud-mdgx/runner:cuda${CUDA_VERSION%.*}-sglang-build-sglangrouter-linux-amd64 --target=sglang-build-sglangrouter pack/cuda
 #
 
 FROM sglang-build AS sglang-build-sglangrouter
@@ -1624,7 +1624,7 @@ EOF
 # Stage SGLang
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=gpustack/runner:cuda${CUDA_VERSION%.*}-sglang-linux-amd64 --target=sglang pack/cuda
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/cuda/Dockerfile --tag=cloud-mdgx/runner:cuda${CUDA_VERSION%.*}-sglang-linux-amd64 --target=sglang pack/cuda
 #
 
 FROM ${SGLANG_BASE_IMAGE} AS sglang

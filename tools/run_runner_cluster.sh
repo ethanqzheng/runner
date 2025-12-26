@@ -13,7 +13,7 @@ usage() {
     echo "  [envs...] ${name} <hosts> <image/image-tag> <volume> [args...]"
     echo "    - envs            : Environment variables to pass into the container (e.g. VLLM_LOGGING_LEVEL=DEBUG)"
     echo "    - hosts           : Passwordless SSH hosts (comma-separated) to run the container on, the first host is the master, others are workers"
-    echo "    - image/image-tag : Docker image or image tag to run (default: 'gpustack/runner:cuda12.4-vllm0.10.0')"
+    echo "    - image/image-tag : Docker image or image tag to run (default: 'cloud-mdgx/runner:cuda12.4-vllm0.10.0')"
     echo "    - volume          : Host directory to mount into the container"
     echo "    - args            : Additional arguments to pass to the Docker container"
     echo "  * This script is intended to run on Linux with Docker installed."
@@ -21,7 +21,7 @@ usage() {
     echo "    - VLLM_LOGGING_LEVEL=DEBUG ${name} 192.168.50.12,192.168.50.13,... cuda12.4-vllm0.10.0 /path/to/data vllm serve --port 8080 --model /path/to/model ..."
     echo -e "    - \033[33mDRUN=true\033[0m VLLM_LOGGING_LEVEL=DEBUG ${name} 192.168.50.12,192.168.50.13,... cuda12.4-vllm0.10.0 /path/to/data vllm serve --port 8080 --model /path/to/model ..."
     echo "# Images"
-    docker images --format "{{.Repository}}:{{.Tag}}" | grep -v '<none>' | grep '^gpustack/runner:' | sort -u | sed 's/^/    - /'
+    docker images --format "{{.Repository}}:{{.Tag}}" | grep -v '<none>' | grep '^cloud-mdgx/runner:' | sort -u | sed 's/^/    - /'
     echo ""
 }
 
@@ -100,11 +100,11 @@ else
     fi
 fi
 if [[ -z "${IMAGE}" ]]; then
-    warn "Image name is blank, using 'gpustack/runner:cuda12.8-vllm0.10.0' as default."
-    IMAGE="gpustack/runner:cuda12.8-vllm0.10.0"
+    warn "Image name is blank, using 'cloud-mdgx/runner:cuda12.8-vllm0.10.0' as default."
+    IMAGE="cloud-mdgx/runner:cuda12.8-vllm0.10.0"
 elif [[ ! "${IMAGE}" =~ ^[a-zA-Z0-9._-]+/[a-zA-Z0-9._-]+.*$ ]]; then
-    warn "Image name '${IMAGE}' does not look like a valid Docker image, using 'gpustack/runner:${IMAGE}' as default."
-    IMAGE="gpustack/runner:${IMAGE}"
+    warn "Image name '${IMAGE}' does not look like a valid Docker image, using 'cloud-mdgx/runner:${IMAGE}' as default."
+    IMAGE="cloud-mdgx/runner:${IMAGE}"
 fi
 
 DRUN="${DRUN:-"false"}"

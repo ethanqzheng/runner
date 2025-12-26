@@ -49,15 +49,15 @@ ARG PYTHON_VERSION=3.11
 ARG CMAKE_MAX_JOBS
 ARG CANN_VERSION=8.3.rc2
 ARG CANN_ARCHS=910b
-ARG MINDIE_BASE_IMAGE=gpustack/runner:cann${CANN_VERSION}-${CANN_ARCHS}-python${PYTHON_VERSION}
+ARG MINDIE_BASE_IMAGE=cloud-mdgx/runner:cann${CANN_VERSION}-${CANN_ARCHS}-python${PYTHON_VERSION}
 ARG MINDIE_VERSION=2.2.rc1
 ARG MINDIE_TORCH_VERSION=2.1.0
-ARG VLLM_BASE_IMAGE=gpustack/runner:cann${CANN_VERSION}-${CANN_ARCHS}-python${PYTHON_VERSION}
+ARG VLLM_BASE_IMAGE=cloud-mdgx/runner:cann${CANN_VERSION}-${CANN_ARCHS}-python${PYTHON_VERSION}
 ARG VLLM_VERSION=0.12.0
 ARG VLLM_ASCEND_VERSION
 ARG VLLM_TORCH_VERSION=2.8.0
 ARG VLLM_MOONCAKE_VERSION=0.3.7.post2
-ARG SGLANG_BASE_IMAGE=gpustack/runner:cann${CANN_VERSION}-${CANN_ARCHS}-python${PYTHON_VERSION}
+ARG SGLANG_BASE_IMAGE=cloud-mdgx/runner:cann${CANN_VERSION}-${CANN_ARCHS}-python${PYTHON_VERSION}
 ARG SGLANG_VERSION=0.5.6.post2
 ARG SGLANG_TORCH_VERSION=2.8.0
 ARG SGLANG_KERNEL_VERSION=20251209
@@ -67,7 +67,7 @@ ARG SGLANG_VLLM_VERSION=0.9.2
 # Stage Bake Runtime
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/arm64 --file=pack/cann/Dockerfile --tag=gpustack/runner:cann${CANN_VERSION%.*}-${CANN_ARCHS}-python${PYTHON_VERSION}-linux-amd64 --target=runtime pack/cann
+#   docker build --progress=plain --platform=linux/arm64 --file=pack/cann/Dockerfile --tag=cloud-mdgx/runner:cann${CANN_VERSION%.*}-${CANN_ARCHS}-python${PYTHON_VERSION}-linux-amd64 --target=runtime pack/cann
 #
 
 FROM quay.io/ascend/cann:${CANN_VERSION}-${CANN_ARCHS}-ubuntu22.04-py${PYTHON_VERSION} AS runtime
@@ -414,7 +414,7 @@ ENV PATH="${CANN_HOME}/driver/tools:${PATH}"
 # Stage Install MindIE
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/arm64 --file=pack/cann/Dockerfile --tag=gpustack/runner:cann${CANN_VERSION%.*}-mindie{MINDIE_VERSION}-linux-arm64 --target=mindie pack/cann
+#   docker build --progress=plain --platform=linux/arm64 --file=pack/cann/Dockerfile --tag=cloud-mdgx/runner:cann${CANN_VERSION%.*}-mindie{MINDIE_VERSION}-linux-arm64 --target=mindie pack/cann
 #
 
 FROM ${MINDIE_BASE_IMAGE} AS mindie
@@ -699,7 +699,7 @@ ENTRYPOINT [ "tini", "--" ]
 # Stage vLLM Build
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/arm64 --file=pack/cann/Dockerfile --tag=gpustack/runner:cann${CANN_VERSION%.*}-vllm-build-linux-arm64 --target=vllm-build pack/cann
+#   docker build --progress=plain --platform=linux/arm64 --file=pack/cann/Dockerfile --tag=cloud-mdgx/runner:cann${CANN_VERSION%.*}-vllm-build-linux-arm64 --target=vllm-build pack/cann
 #
 
 FROM ${VLLM_BASE_IMAGE} AS vllm-build
@@ -747,7 +747,7 @@ EOF
 # Stage vLLM Build MoonCake
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/arm64 --file=pack/cann/Dockerfile --tag=gpustack/runner:cann${CANN_VERSION%.*}-vllm-build-mooncake-linux-arm64 --target=vllm-build-mooncake pack/cann
+#   docker build --progress=plain --platform=linux/arm64 --file=pack/cann/Dockerfile --tag=cloud-mdgx/runner:cann${CANN_VERSION%.*}-vllm-build-mooncake-linux-arm64 --target=vllm-build-mooncake pack/cann
 #
 
 FROM vllm-build AS vllm-build-mooncake
@@ -806,7 +806,7 @@ EOF
 # Stage vLLM
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/arm64 --file=pack/cann/Dockerfile --tag=gpustack/runner:cann${CANN_VERSION%.*}-vllm${VLLM_VERSION}-linux-arm64 --target=vllm pack/cann
+#   docker build --progress=plain --platform=linux/arm64 --file=pack/cann/Dockerfile --tag=cloud-mdgx/runner:cann${CANN_VERSION%.*}-vllm${VLLM_VERSION}-linux-arm64 --target=vllm pack/cann
 #
 FROM vllm-build AS vllm
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
@@ -967,7 +967,7 @@ ENTRYPOINT [ "tini", "--" ]
 # Stage SGLang
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/arm64 --file=pack/cann/Dockerfile --tag=gpustack/runner:cann${CANN_VERSION%.*}-sglang${SGLANG_VERSION}-linux-arm64 --target=sglang pack/cann
+#   docker build --progress=plain --platform=linux/arm64 --file=pack/cann/Dockerfile --tag=cloud-mdgx/runner:cann${CANN_VERSION%.*}-sglang${SGLANG_VERSION}-linux-arm64 --target=sglang pack/cann
 #
 
 FROM ${SGLANG_BASE_IMAGE} AS sglang

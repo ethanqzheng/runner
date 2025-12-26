@@ -1,7 +1,7 @@
 [
   [
-    "gpustack/runner:cuda12.8-vllm0.10.0",
-    "gpustack/runner:cuda12.8-vllm0.10.0",
+    "cloud-mdgx/runner:cuda12.8-vllm0.10.0",
+    "cloud-mdgx/runner:cuda12.8-vllm0.10.0",
     {
       "prefix": "",
       "backend": "cuda",
@@ -13,8 +13,8 @@
     }
   ],
   [
-    "gpustack/runner:cann8.2-910b-mindie2.1.rc1",
-    "gpustack/runner:cann8.2-910b-mindie2.1.rc1",
+    "cloud-mdgx/runner:cann8.2-910b-mindie2.1.rc1",
+    "cloud-mdgx/runner:cann8.2-910b-mindie2.1.rc1",
     {
       "prefix": "",
       "backend": "cann",
@@ -26,8 +26,8 @@
     }
   ],
   [
-    "website.com/abc/gpustack/runner:cann8.2-910b-mindie2.1.rc1",
-    "website.com/abc/gpustack/runner:cann8.2-910b-mindie2.1.rc1",
+    "website.com/abc/cloud-mdgx/runner:cann8.2-910b-mindie2.1.rc1",
+    "website.com/abc/cloud-mdgx/runner:cann8.2-910b-mindie2.1.rc1",
     {
       "prefix": "website.com/abc",
       "backend": "cann",
@@ -39,8 +39,8 @@
     }
   ],
   [
-    "website.com/abc/gpustack/runner:cann8.2-910b-mindie2.1.rc1-dev",
-    "website.com/abc/gpustack/runner:cann8.2-910b-mindie2.1.rc1-dev",
+    "website.com/abc/cloud-mdgx/runner:cann8.2-910b-mindie2.1.rc1-dev",
+    "website.com/abc/cloud-mdgx/runner:cann8.2-910b-mindie2.1.rc1-dev",
     {
       "prefix": "website.com/abc",
       "backend": "cann",
@@ -52,8 +52,8 @@
     }
   ],
   [
-    "website.com/abc/gpustack/runner:HostX.Y-mindie2.1.rc1-dev",
-    "website.com/abc/gpustack/runner:HostX.Y-mindie2.1.rc1-dev",
+    "website.com/abc/cloud-mdgx/runner:HostX.Y-mindie2.1.rc1-dev",
+    "website.com/abc/cloud-mdgx/runner:HostX.Y-mindie2.1.rc1-dev",
     {
       "prefix": "website.com/abc",
       "backend": "Host",

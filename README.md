@@ -195,22 +195,22 @@ The Docker image naming convention is as follows:
 
 ### Example
 
-- NAMESPACE: `gpustack`
+- NAMESPACE: `cloud-mdgx`
 - REPOSITORY: `runner`
 
 | Accelerated Backend | OS/ARCH     | Inference Service | Single-Arch Image Name                                | Multi-Arch Image Name                     |
 |---------------------|-------------|-------------------|-------------------------------------------------------|-------------------------------------------|
-| Ascend CANN 910b    | linux/amd64 | vLLM              | `gpustack/runner:cann8.1-910b-vllm0.9.2-linux-amd64`  | `gpustack/runner:cann8.1-910b-vllm0.9.2`  |
-| Ascend CANN 910b    | linux/arm64 | vLLM              | `gpustack/runner:cann8.1-910b-vllm0.9.2-linux-arm64`  | `gpustack/runner:cann8.1-910b-vllm0.9.2`  |
-| NVIDIA CUDA 12.8    | linux/amd64 | vLLM              | `gpustack/runner:cuda12.8-910b-vllm0.9.2-linux-amd64` | `gpustack/runner:cuda12.8-910b-vllm0.9.2` |
-| NVIDIA CUDA 12.8    | linux/arm64 | vLLM              | `gpustack/runner:cuda12.8-910b-vllm0.9.2-linux-arm64` | `gpustack/runner:cuda12.8-910b-vllm0.9.2` |
+| Ascend CANN 910b    | linux/amd64 | vLLM              | `cloud-mdgx/runner:cann8.1-910b-vllm0.9.2-linux-amd64`  | `cloud-mdgx/runner:cann8.1-910b-vllm0.9.2`  |
+| Ascend CANN 910b    | linux/arm64 | vLLM              | `cloud-mdgx/runner:cann8.1-910b-vllm0.9.2-linux-arm64`  | `cloud-mdgx/runner:cann8.1-910b-vllm0.9.2`  |
+| NVIDIA CUDA 12.8    | linux/amd64 | vLLM              | `cloud-mdgx/runner:cuda12.8-910b-vllm0.9.2-linux-amd64` | `cloud-mdgx/runner:cuda12.8-910b-vllm0.9.2` |
+| NVIDIA CUDA 12.8    | linux/arm64 | vLLM              | `cloud-mdgx/runner:cuda12.8-910b-vllm0.9.2-linux-arm64` | `cloud-mdgx/runner:cuda12.8-910b-vllm0.9.2` |
 
 ### Build and Release Workflow
 
-1. Build single architecture images for OS/ARCH, e.g. `gpustack/runner:cann8.1-910b-vllm0.9.2-linux-amd64`.
+1. Build single architecture images for OS/ARCH, e.g. `cloud-mdgx/runner:cann8.1-910b-vllm0.9.2-linux-amd64`.
 2. Combine single-architecture images into a multiple architectures image, e.g.
-   `gpustack/runner:cann8.1-910b-vllm0.9.2-dev`.
-3. After testing, rename the multi-architecture image to the final tag, e.g. `gpustack/runner:cann8.1-910b-vllm0.9.2`.
+   `cloud-mdgx/runner:cann8.1-910b-vllm0.9.2-dev`.
+3. After testing, rename the multi-architecture image to the final tag, e.g. `cloud-mdgx/runner:cann8.1-910b-vllm0.9.2`.
 
 ## Integration Process
 

@@ -21,17 +21,17 @@ ARG PYTHON_VERSION=3.10
 ARG CMAKE_MAX_JOBS
 ARG COREX_VERSION=4.2.0
 ARG COREX_ARCHS
-ARG VLLM_BASE_IMAGE=gpustack/runner:corex${COREX_VERSION}-python${PYTHON_VERSION}
+ARG VLLM_BASE_IMAGE=cloud-mdgx/runner:corex${COREX_VERSION}-python${PYTHON_VERSION}
 ARG VLLM_VERSION=0.8.3
 ARG VLLM_TORCH_VERSION=2.4.1
 
 # Stage Bake Runtime
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/corex/Dockerfile --tag=gpustack/runner:corex${COREX_VERSION%.*}-python${PYTHON_VERSION}-linux-amd64 --target=runtime pack/corex
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/corex/Dockerfile --tag=cloud-mdgx/runner:corex${COREX_VERSION%.*}-python${PYTHON_VERSION}-linux-amd64 --target=runtime pack/corex
 #
 
-FROM gpustack/runner:corex${COREX_VERSION}-python${PYTHON_VERSION}-vanilla AS runtime
+FROM cloud-mdgx/runner:corex${COREX_VERSION}-python${PYTHON_VERSION}-vanilla AS runtime
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
 ARG TARGETPLATFORM
@@ -255,7 +255,7 @@ ENV COREX_HOME="/usr/local/corex" \
 # Stage Install vLLM
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/corex/Dockerfile --tag=gpustack/runner:corex${COREX_VERSION%.*}-vllm${VLLM_VERSION}-linux-amd64 --target=vllm pack/corex
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/corex/Dockerfile --tag=cloud-mdgx/runner:corex${COREX_VERSION%.*}-vllm${VLLM_VERSION}-linux-amd64 --target=vllm pack/corex
 #
 
 FROM ${VLLM_BASE_IMAGE} AS vllm

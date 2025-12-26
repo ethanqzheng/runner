@@ -23,7 +23,7 @@ ARG PYTHON_VERSION=3.10
 ARG CMAKE_MAX_JOBS
 ARG DTK_VERSION=25.04.2
 ARG DTK_ARCHS
-ARG VLLM_BASE_IMAGE=gpustack/runner:dtk${DTK_VERSION}-python${PYTHON_VERSION}
+ARG VLLM_BASE_IMAGE=cloud-mdgx/runner:dtk${DTK_VERSION}-python${PYTHON_VERSION}
 ARG VLLM_VERSION=0.9.2
 ARG VLLM_TORCH_VERSION=2.5.1
 ARG VLLM_LMCACHE_VERSION=0.3.5
@@ -31,10 +31,10 @@ ARG VLLM_LMCACHE_VERSION=0.3.5
 # Stage Bake Runtime
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/dtk/Dockerfile --tag=gpustack/runner:dtk${DTK_VERSION%.*}-python${PYTHON_VERSION}-linux-amd64 --target=runtime pack/dtk
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/dtk/Dockerfile --tag=cloud-mdgx/runner:dtk${DTK_VERSION%.*}-python${PYTHON_VERSION}-linux-amd64 --target=runtime pack/dtk
 #
 
-FROM gpustack/runner:dtk${DTK_VERSION}-python${PYTHON_VERSION}-vanilla AS runtime
+FROM cloud-mdgx/runner:dtk${DTK_VERSION}-python${PYTHON_VERSION}-vanilla AS runtime
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
 ARG TARGETPLATFORM
@@ -258,7 +258,7 @@ ENV DTK_HOME="/opt/dtk" \
 # Stage Install vLLM
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/dtk/Dockerfile --tag=gpustack/runner:dtk${DTK_VERSION%.*}-vllm${VLLM_VERSION}-linux-amd64 --target=vllm pack/dtk
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/dtk/Dockerfile --tag=cloud-mdgx/runner:dtk${DTK_VERSION%.*}-vllm${VLLM_VERSION}-linux-amd64 --target=vllm pack/dtk
 #
 
 FROM ${VLLM_BASE_IMAGE} AS vllm

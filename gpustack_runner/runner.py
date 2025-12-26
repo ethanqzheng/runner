@@ -11,12 +11,12 @@ from typing import Any
 from dataclasses_json import dataclass_json
 
 _RE_DOCKER_IMAGE = re.compile(
-    r"(?:(?P<prefix>[\w\\.\-]+(?:/[\w\\.\-]+)*)/)?gpustack/runner:(?P<backend>(Host|cann|corex|cuda|dtk|maca|rocm))(?P<backend_version>[XY\d\\.]+)(?:-(?P<backend_variant>\w+))?-(?P<service>(vllm|voxbox|mindie|sglang))(?P<service_version>[\w\\.]+)(?:-(?P<suffix>\w+))?",
+    r"(?:(?P<prefix>[\w\\.\-]+(?:/[\w\\.\-]+)*)/)?cloud-mdgx/runner:(?P<backend>(Host|cann|corex|cuda|dtk|maca|rocm))(?P<backend_version>[XY\d\\.]+)(?:-(?P<backend_variant>\w+))?-(?P<service>(vllm|voxbox|mindie|sglang))(?P<service_version>[\w\\.]+)(?:-(?P<suffix>\w+))?",
 )
 """
 Regex for Docker image parsing,
 which captures the following named groups:
-    - `prefix`: The optional prefix before `gpustack/runner`, e.g. a registry URL or namespace.
+    - `prefix`: The optional prefix before `cloud-mdgx/runner`, e.g. a registry URL or namespace.
     - `backend`: The backend name, e.g. "cann", "cuda", "rocm", etc.
     - `backend_version`: The backend version, ignored patch version, e.g. "8.2", "12.4", "6.3", etc.
     - `backend_variant`: The optional backend variant, e.g. "910b", etc.
@@ -33,7 +33,7 @@ def set_re_docker_image(pattern: str):
     Args:
         pattern:
             The regex pattern to set. It should capture the following named groups:
-            - `prefix`: The optional prefix before `gpustack/runner`, e.g. a registry URL or namespace.
+            - `prefix`: The optional prefix before `cloud-mdgx/runner`, e.g. a registry URL or namespace.
             - `backend`: The backend name, e.g. "cann", "cuda",
             - `backend_version`: The backend version, ignored patch version, e.g. "8.2", "12.4", "6.3", etc.
             - `backend_variant`: The optional backend variant, e.g. "910b", etc
@@ -82,7 +82,7 @@ class DockerImage:
         Parse the Docker image string into a DockerImage object.
 
         The given image string must follow the below regex format:
-        `[prefix/]gpustack/runner:{backend}{backend_version}[-backend_variant]-{service}{service_version}[-suffix]`
+        `[prefix/]cloud-mdgx/runner:{backend}{backend_version}[-backend_variant]-{service}{service_version}[-suffix]`
 
         Args:
             image:
@@ -100,7 +100,7 @@ class DockerImage:
     def __str__(self):
         parts = [
             "",
-            "gpustack/runner:",
+            "cloud-mdgx/runner:",
             self.backend,
             self.backend_version,
         ]
@@ -180,7 +180,7 @@ Runners = list[Runner]
         "service": "vllm",
         "service_version": "0.10.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-vllm0.10.0",
+        "docker_image": "cloud-mdgx/runner:cann8.2-vllm0.10.0",
         "deprecated": false
     }
 ]
@@ -406,7 +406,7 @@ BackendRunners = list[BackendRunner]
                                         "platforms": [
                                             {
                                                 "platform": "linux/amd64",
-                                                "docker_image": "gpustack/runner:cann8.2-vllm0.10.0"
+                                                "docker_image": "cloud-mdgx/runner:cann8.2-vllm0.10.0"
                                             }
                                         ]
                                     }
@@ -445,7 +445,7 @@ ServiceRunners = list[ServiceRunner]
                                         "platforms": [
                                             {
                                                 "platform": "linux/amd64",
-                                                "docker_image": "gpustack/runner:cann8.2-vllm0.10.0"
+                                                "docker_image": "cloud-mdgx/runner:cann8.2-vllm0.10.0"
                                             }
                                         ]
                                     }

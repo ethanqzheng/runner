@@ -21,17 +21,17 @@ ARG PYTHON_VERSION=3.10
 ARG CMAKE_MAX_JOBS
 ARG MACA_VERSION=3.2.1
 ARG MACA_ARCHS
-ARG VLLM_BASE_IMAGE=gpustack/runner:maca${MACA_VERSION}-python${PYTHON_VERSION}
+ARG VLLM_BASE_IMAGE=cloud-mdgx/runner:maca${MACA_VERSION}-python${PYTHON_VERSION}
 ARG VLLM_VERSION=0.10.2
 ARG VLLM_TORCH_VERSION=2.6.0
 
 # Stage Bake Runtime
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/maca/Dockerfile --tag=gpustack/runner:maca${DTK_VERSION%.*}-python${PYTHON_VERSION}-linux-amd64 --target=runtime pack/maca
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/maca/Dockerfile --tag=cloud-mdgx/runner:maca${DTK_VERSION%.*}-python${PYTHON_VERSION}-linux-amd64 --target=runtime pack/maca
 #
 
-FROM gpustack/runner:maca${MACA_VERSION}-python${PYTHON_VERSION}-vanilla AS runtime
+FROM cloud-mdgx/runner:maca${MACA_VERSION}-python${PYTHON_VERSION}-vanilla AS runtime
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
 ARG TARGETPLATFORM
@@ -257,7 +257,7 @@ ENV MACA_HOME="/opt/maca" \
 # Stage Install vLLM
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/maca/Dockerfile --tag=gpustack/runner:maca${DTK_VERSION%.*}-vllm${VLLM_VERSION}-linux-amd64 --target=vllm pack/maca
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/maca/Dockerfile --tag=cloud-mdgx/runner:maca${DTK_VERSION%.*}-vllm${VLLM_VERSION}-linux-amd64 --target=vllm pack/maca
 #
 
 FROM ${VLLM_BASE_IMAGE} AS vllm

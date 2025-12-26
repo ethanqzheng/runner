@@ -71,12 +71,12 @@ ARG PYTHON_VERSION=3.12
 ARG CMAKE_MAX_JOBS
 ARG ROCM_VERSION=7.0.2
 ARG ROCM_ARCHS
-ARG VLLM_BASE_IMAGE=gpustack/runner:rocm${ROCM_VERSION}-python${PYTHON_VERSION}
+ARG VLLM_BASE_IMAGE=cloud-mdgx/runner:rocm${ROCM_VERSION}-python${PYTHON_VERSION}
 ARG VLLM_VERSION=0.13.0
 ARG VLLM_TORCH_VERSION=2.9.1
 ARG VLLM_TORCH_ROCM_VERSION=${ROCM_VERSION}
 ARG VLLM_TORCH_SOURCE=pytorch
-ARG VLLM_BUILD_BASE_IMAGE=gpustack/runner:rocm${VLLM_TORCH_ROCM_VERSION}-python${PYTHON_VERSION}
+ARG VLLM_BUILD_BASE_IMAGE=cloud-mdgx/runner:rocm${VLLM_TORCH_ROCM_VERSION}-python${PYTHON_VERSION}
 ARG VLLM_TRITON_COMMIT=57c693b6
 ARG VLLM_FLASHATTENTION_VERSION=2.8.3
 ARG VLLM_AITER_VERSION=0.1.7.post5
@@ -89,7 +89,7 @@ ARG SGLANG_BUILD_BASE_IMAGE=vllm-build
 # Stage Bake Runtime
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=gpustack/runner:rocm{ROCM_VERSION%.*}-python${PYTHON_VERSION}-linux-amd64 --target=runtime pack/dtk
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=cloud-mdgx/runner:rocm{ROCM_VERSION%.*}-python${PYTHON_VERSION}-linux-amd64 --target=runtime pack/dtk
 #
 
 FROM rocm/dev-ubuntu-22.04:${ROCM_VERSION}-complete AS runtime
@@ -332,7 +332,7 @@ EOF
 # Stage vLLM Build
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=gpustack/runner:rocm${ROCM_VERSION%.*}-vllm-build-linux-amd64 --target=vllm-build pack/rocm
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=cloud-mdgx/runner:rocm${ROCM_VERSION%.*}-vllm-build-linux-amd64 --target=vllm-build pack/rocm
 #
 
 FROM ${VLLM_BUILD_BASE_IMAGE} AS vllm-build
@@ -446,7 +446,7 @@ EOF
 # Stage vLLM Build Triton
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=gpustack/runner:rocm${ROCM_VERSION%.*}-vllm-build-triton-linux-amd64 --target=vllm-build-triton pack/rocm
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=cloud-mdgx/runner:rocm${ROCM_VERSION%.*}-vllm-build-triton-linux-amd64 --target=vllm-build-triton pack/rocm
 #
 
 FROM vllm-build AS vllm-build-triton
@@ -528,7 +528,7 @@ EOF
 # Stage vLLM Build FlashAttention
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=gpustack/runner:rocm${ROCM_VERSION%.*}-vllm-build-flashattention-linux-amd64 --target=vllm-build-flashattention pack/rocm
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=cloud-mdgx/runner:rocm${ROCM_VERSION%.*}-vllm-build-flashattention-linux-amd64 --target=vllm-build-flashattention pack/rocm
 #
 
 FROM vllm-build AS vllm-build-flashattention
@@ -593,7 +593,7 @@ EOF
 # Stage vLLM Build AITER
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=gpustack/runner:rocm${ROCM_VERSION%.*}-vllm-build-aiter-linux-amd64 --target=vllm-build-aiter pack/rocm
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=cloud-mdgx/runner:rocm${ROCM_VERSION%.*}-vllm-build-aiter-linux-amd64 --target=vllm-build-aiter pack/rocm
 #
 
 FROM vllm-build AS vllm-build-aiter
@@ -662,7 +662,7 @@ EOF
 # Stage vLLM Build vLLM
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=gpustack/runner:rocm${ROCM_VERSION%.*}-vllm-build-vllm-linux-amd64 --target=vllm-build-vllm pack/rocm
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=cloud-mdgx/runner:rocm${ROCM_VERSION%.*}-vllm-build-vllm-linux-amd64 --target=vllm-build-vllm pack/rocm
 #
 
 FROM vllm-build AS vllm-build-vllm
@@ -738,7 +738,7 @@ EOF
 # Stage vLLM Build LMCache
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=gpustack/runner:rocm${ROCM_VERSION%.*}-vllm-build-lmcache-linux-amd64 --target=vllm-build-lmcache pack/rocm
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=cloud-mdgx/runner:rocm${ROCM_VERSION%.*}-vllm-build-lmcache-linux-amd64 --target=vllm-build-lmcache pack/rocm
 #
 
 FROM vllm-build AS vllm-build-lmcache
@@ -804,7 +804,7 @@ EOF
 # Stage vLLM Build MoonCake
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=gpustack/runner:rocm${ROCM_VERSION%.*}-vllm-build-mooncake-linux-amd64 --target=vllm-build-mooncake pack/rocm
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=cloud-mdgx/runner:rocm${ROCM_VERSION%.*}-vllm-build-mooncake-linux-amd64 --target=vllm-build-mooncake pack/rocm
 #
 
 FROM vllm-build AS vllm-build-mooncake
@@ -857,7 +857,7 @@ EOF
 # Stage vLLM
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=gpustack/runner:rocm${ROCM_VERSION%.*}-vllm-linux-amd64 --target=vllm pack/rocm
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=cloud-mdgx/runner:rocm${ROCM_VERSION%.*}-vllm-linux-amd64 --target=vllm pack/rocm
 #
 
 FROM ${VLLM_BASE_IMAGE} AS vllm
@@ -1151,7 +1151,7 @@ ENTRYPOINT [ "tini", "--" ]
 # Stage SGLang Build
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=gpustack/runner:rocm{ROCM_VERSION%.*}-sglang-build-linux-amd64 --target=sglang-build pack/rocm
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=cloud-mdgx/runner:rocm{ROCM_VERSION%.*}-sglang-build-linux-amd64 --target=sglang-build pack/rocm
 #
 
 FROM ${SGLANG_BUILD_BASE_IMAGE} AS sglang-build
@@ -1184,7 +1184,7 @@ EOF
 # Stage SGLang Build SGLang
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=gpustack/runner:rocm${ROCM_VERSION%.*}-sglang-build-sglang-linux-amd64 --target=sglang-build-sglang pack/rocm
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=cloud-mdgx/runner:rocm${ROCM_VERSION%.*}-sglang-build-sglang-linux-amd64 --target=sglang-build-sglang pack/rocm
 #
 
 FROM sglang-build AS sglang-build-sglang
@@ -1269,7 +1269,7 @@ EOF
 # Stage SGLang Build SGLang Router
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=gpustack/runner:rocm${ROCM_VERSION%.*}-sglang-build-sglangrouter-linux-amd64 --target=sglang-build-sglangrouter pack/rocm
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=cloud-mdgx/runner:rocm${ROCM_VERSION%.*}-sglang-build-sglangrouter-linux-amd64 --target=sglang-build-sglangrouter pack/rocm
 #
 
 FROM sglang-build AS sglang-build-sglangrouter
@@ -1323,7 +1323,7 @@ EOF
 # Stage SGLang
 #
 # Example build command:
-#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=gpustack/runner:rocm${ROCM_VERSION%.*}-sglang-linux-amd64 --target=sglang pack/rocm
+#   docker build --progress=plain --platform=linux/amd64 --file=pack/rocm/Dockerfile --tag=cloud-mdgx/runner:rocm${ROCM_VERSION%.*}-sglang-linux-amd64 --target=sglang pack/rocm
 #
 
 FROM ${SGLANG_BASE_IMAGE} AS sglang
