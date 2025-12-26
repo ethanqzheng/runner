@@ -103,7 +103,7 @@ on:
 env:
   INPUT_REGISTRY: swr.cn-east-3.myhuaweicloud.com
   INPUT_USERNAME: ${{ secrets.CI_SWR_USERNAME }}
-  INPUT_PASSWORD: ${{ secrets.CI_DOCKERHUB_PASSWORD }}
+  INPUT_PASSWORD: ${{ secrets.CI_SWR_PASSWORD }}
   INPUT_NAMESPACE: cloud-mdgx
   INPUT_REPOSITORY: runner
   INPUT_CACHE_REPOSITORY: runner-build-cache
