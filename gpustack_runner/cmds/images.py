@@ -73,45 +73,45 @@ class ListImagesSubCommand(SubCommand):
         list_parser.add_argument(
             "--backend",
             type=str,
-            help="Filter gpustack/runner images by backend name",
+            help="Filter cloud-mdgx/runner images by backend name",
             choices=_AVAILABLE_BACKENDS,
         )
 
         list_parser.add_argument(
             "--backend-version",
             type=str,
-            help="Filter gpustack/runner images by exact backend version",
+            help="Filter cloud-mdgx/runner images by exact backend version",
         )
 
         list_parser.add_argument(
             "--backend-version-prefix",
             type=str,
-            help="Filter gpustack/runner images by backend version prefix",
+            help="Filter cloud-mdgx/runner images by backend version prefix",
         )
 
         list_parser.add_argument(
             "--backend-variant",
             type=str,
-            help="Filter gpustack/runner images by backend variant",
+            help="Filter cloud-mdgx/runner images by backend variant",
         )
 
         list_parser.add_argument(
             "--service",
             type=str,
-            help="Filter gpustack/runner images by service name",
+            help="Filter cloud-mdgx/runner images by service name",
             choices=_AVAILABLE_SERVICES,
         )
 
         list_parser.add_argument(
             "--service-version",
             type=str,
-            help="Filter gpustack/runner images by exact service version",
+            help="Filter cloud-mdgx/runner images by exact service version",
         )
 
         list_parser.add_argument(
             "--service-version-prefix",
             type=str,
-            help="Filter gpustack/runner images by service version prefix",
+            help="Filter cloud-mdgx/runner images by service version prefix",
         )
 
         list_parser.add_argument(
@@ -215,45 +215,45 @@ class SaveImagesSubCommand(SubCommand):
         save_parser.add_argument(
             "--backend",
             type=str,
-            help="Filter gpustack/runner images by backend name",
+            help="Filter cloud-mdgx/runner images by backend name",
             choices=_AVAILABLE_BACKENDS,
         )
 
         save_parser.add_argument(
             "--backend-version",
             type=str,
-            help="Filter gpustack/runner images by exact backend version",
+            help="Filter cloud-mdgx/runner images by exact backend version",
         )
 
         save_parser.add_argument(
             "--backend-version-prefix",
             type=str,
-            help="Filter gpustack/runner images by backend version prefix",
+            help="Filter cloud-mdgx/runner images by backend version prefix",
         )
 
         save_parser.add_argument(
             "--backend-variant",
             type=str,
-            help="Filter gpustack/runner images by backend variant",
+            help="Filter cloud-mdgx/runner images by backend variant",
         )
 
         save_parser.add_argument(
             "--service",
             type=str,
-            help="Filter gpustack/runner images by service name",
+            help="Filter cloud-mdgx/runner images by service name",
             choices=_AVAILABLE_SERVICES,
         )
 
         save_parser.add_argument(
             "--service-version",
             type=str,
-            help="Filter gpustack/runner images by exact service version",
+            help="Filter cloud-mdgx/runner images by exact service version",
         )
 
         save_parser.add_argument(
             "--service-version-prefix",
             type=str,
-            help="Filter gpustack/runner images by service version prefix",
+            help="Filter cloud-mdgx/runner images by service version prefix",
         )
 
         save_parser.add_argument(
@@ -293,8 +293,8 @@ class SaveImagesSubCommand(SubCommand):
             "--source",
             "--src",
             type=str,
-            default="docker.io",
-            help="Source registry (default: docker.io)",
+            default="swr.cn-east-3.myhuaweicloud.com",
+            help="Source registry (default: swr.cn-east-3.myhuaweicloud.com)",
         )
 
         save_parser.add_argument(
@@ -532,45 +532,45 @@ class CopyImagesSubCommand(SubCommand):
         copy_parser.add_argument(
             "--backend",
             type=str,
-            help="Filter gpustack/runner images by backend name",
+            help="Filter cloud-mdgx/runner images by backend name",
             choices=_AVAILABLE_BACKENDS,
         )
 
         copy_parser.add_argument(
             "--backend-version",
             type=str,
-            help="Filter gpustack/runner images by exact backend version",
+            help="Filter cloud-mdgx/runner images by exact backend version",
         )
 
         copy_parser.add_argument(
             "--backend-version-prefix",
             type=str,
-            help="Filter gpustack/runner images by backend version prefix",
+            help="Filter cloud-mdgx/runner images by backend version prefix",
         )
 
         copy_parser.add_argument(
             "--backend-variant",
             type=str,
-            help="Filter gpustack/runner images by backend variant",
+            help="Filter cloud-mdgx/runner images by backend variant",
         )
 
         copy_parser.add_argument(
             "--service",
             type=str,
-            help="Filter gpustack/runner images by service name",
+            help="Filter cloud-mdgx/runner images by service name",
             choices=_AVAILABLE_SERVICES,
         )
 
         copy_parser.add_argument(
             "--service-version",
             type=str,
-            help="Filter gpustack/runner images by exact service version",
+            help="Filter cloud-mdgx/runner images by exact service version",
         )
 
         copy_parser.add_argument(
             "--service-version-prefix",
             type=str,
-            help="Filter gpustack/runner images by service version prefix",
+            help="Filter cloud-mdgx/runner images by service version prefix",
         )
 
         copy_parser.add_argument(
@@ -610,8 +610,8 @@ class CopyImagesSubCommand(SubCommand):
             "--source",
             "--src",
             type=str,
-            default="docker.io",
-            help="Source registry (default: docker.io)",
+            default="swr.cn-east-3.myhuaweicloud.com",
+            help="Source registry (default: swr.cn-east-3.myhuaweicloud.com)",
         )
 
         copy_parser.add_argument(
@@ -642,8 +642,8 @@ class CopyImagesSubCommand(SubCommand):
             "--destination",
             "--dest",
             type=str,
-            default="docker.io",
-            help="Destination registry (default: docker.io)",
+            default="swr.cn-east-3.myhuaweicloud.com",
+            help="Destination registry (default: swr.cn-east-3.myhuaweicloud.com)",
         )
 
         copy_parser.add_argument(
@@ -862,20 +862,20 @@ class CompareImagesSubCommand(SubCommand):
         compare_parser.add_argument(
             "--backend",
             type=str,
-            help="Filter gpustack/runner images by backend name",
+            help="Filter cloud-mdgx/runner images by backend name",
             choices=_AVAILABLE_BACKENDS,
         )
 
         compare_parser.add_argument(
             "--backend-variant",
             type=str,
-            help="Filter gpustack/runner images by backend variant",
+            help="Filter cloud-mdgx/runner images by backend variant",
         )
 
         compare_parser.add_argument(
             "--service",
             type=str,
-            help="Filter gpustack/runner images by service name",
+            help="Filter cloud-mdgx/runner images by service name",
             choices=_AVAILABLE_SERVICES,
         )
 
@@ -889,7 +889,7 @@ class CompareImagesSubCommand(SubCommand):
         compare_parser.add_argument(
             "--target",
             type=str,
-            help="Target versioned gpustack/runner to compare images with",
+            help="Target versioned cloud-mdgx/runner to compare images with",
             required=True,
         )
 
@@ -902,7 +902,7 @@ class CompareImagesSubCommand(SubCommand):
         compare_parser.add_argument(
             "--refresh",
             action="store_true",
-            help="Refresh the target versioned gpustack/runner metadata, "
+            help="Refresh the target versioned cloud-mdgx/runner metadata, "
             "default, it will use cached file if exists",
         )
 
@@ -918,7 +918,7 @@ class CompareImagesSubCommand(SubCommand):
         self.refresh = args.refresh
 
         if not self.target:
-            msg = "Target versioned gpustack/runner is required."
+            msg = "Target versioned cloud-mdgx/runner is required."
             raise RuntimeError(msg)
 
     def run(self):
@@ -948,7 +948,7 @@ class CompareImagesSubCommand(SubCommand):
                                 f.write(chunk)
                 else:
                     msg = (
-                        f"Failed to fetch target versioned gpustack/runner from '{target_py_json_uri}', "
+                        f"Failed to fetch target versioned cloud-mdgx/runner from '{target_py_json_uri}', "
                         f"status code: {response.status_code}"
                     )
                     raise RuntimeError(

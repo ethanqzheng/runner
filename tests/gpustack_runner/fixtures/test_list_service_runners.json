@@ -27,11 +27,11 @@
                       {
                         "platforms": [
                           {
-                            "docker_image": "gpustack/runner:cann8.2-310p-vllm0.10.0",
+                            "docker_image": "cloud-mdgx/runner:cann8.2-310p-vllm0.10.0",
                             "platform": "linux/amd64"
                           },
                           {
-                            "docker_image": "gpustack/runner:cann8.2-310p-vllm0.10.0",
+                            "docker_image": "cloud-mdgx/runner:cann8.2-310p-vllm0.10.0",
                             "platform": "linux/arm64"
                           }
                         ],
@@ -40,11 +40,11 @@
                       {
                         "platforms": [
                           {
-                            "docker_image": "gpustack/runner:cann8.2-910b-vllm0.10.0",
+                            "docker_image": "cloud-mdgx/runner:cann8.2-910b-vllm0.10.0",
                             "platform": "linux/amd64"
                           },
                           {
-                            "docker_image": "gpustack/runner:cann8.2-910b-vllm0.10.0",
+                            "docker_image": "cloud-mdgx/runner:cann8.2-910b-vllm0.10.0",
                             "platform": "linux/arm64"
                           }
                         ],
@@ -64,11 +64,11 @@
                       {
                         "platforms": [
                           {
-                            "docker_image": "gpustack/runner:cuda12.8-vllm0.10.0",
+                            "docker_image": "cloud-mdgx/runner:cuda12.8-vllm0.10.0",
                             "platform": "linux/amd64"
                           },
                           {
-                            "docker_image": "gpustack/runner:cuda12.8-vllm0.10.0",
+                            "docker_image": "cloud-mdgx/runner:cuda12.8-vllm0.10.0",
                             "platform": "linux/arm64"
                           }
                         ],
@@ -83,11 +83,11 @@
                       {
                         "platforms": [
                           {
-                            "docker_image": "gpustack/runner:cuda12.6-vllm0.10.0",
+                            "docker_image": "cloud-mdgx/runner:cuda12.6-vllm0.10.0",
                             "platform": "linux/amd64"
                           },
                           {
-                            "docker_image": "gpustack/runner:cuda12.6-vllm0.10.0",
+                            "docker_image": "cloud-mdgx/runner:cuda12.6-vllm0.10.0",
                             "platform": "linux/arm64"
                           }
                         ],
@@ -102,11 +102,11 @@
                       {
                         "platforms": [
                           {
-                            "docker_image": "gpustack/runner:cuda12.4-vllm0.10.0",
+                            "docker_image": "cloud-mdgx/runner:cuda12.4-vllm0.10.0",
                             "platform": "linux/amd64"
                           },
                           {
-                            "docker_image": "gpustack/runner:cuda12.4-vllm0.10.0",
+                            "docker_image": "cloud-mdgx/runner:cuda12.4-vllm0.10.0",
                             "platform": "linux/arm64"
                           }
                         ],
@@ -126,7 +126,7 @@
                       {
                         "platforms": [
                           {
-                            "docker_image": "gpustack/runner:rocm6.3-vllm0.10.0",
+                            "docker_image": "cloud-mdgx/runner:rocm6.3-vllm0.10.0",
                             "platform": "linux/amd64"
                           }
                         ],

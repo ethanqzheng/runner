@@ -72,7 +72,8 @@ docs-online: docs
 	@echo "--- $@ ---"
 
 
-PACKAGE_NAMESPACE ?= gpustack
+PACKAGE_REGISTRY ?= swr.cn-east-3.myhuaweicloud.com
+PACKAGE_NAMESPACE ?= cloud-mdgx
 PACKAGE_REPOSITORY ?= runner
 PACKAGE_CACHE_REPOSITORY ?= runner-build-cache
 PACKAGE_TARGET ?= services
@@ -87,17 +88,18 @@ package:
 		echo "[FATAL] Docker is not installed. Please install Docker to use this target."; \
 		exit 1; \
 	fi
-	if [[ -z $$(docker buildx inspect --builder "gpustack" 2>/dev/null) ]]; then \
-		echo "[INFO] Creating new buildx builder 'gpustack'"; \
+	if [[ -z $$(docker buildx inspect --builder "cloud-mdgx" 2>/dev/null) ]]; then \
+		echo "[INFO] Creating new buildx builder 'cloud-mdgx'"; \
 		docker run --rm --privileged tonistiigi/binfmt:qemu-v9.2.2-52 --uninstall qemu-*; \
 		docker run --rm --privileged tonistiigi/binfmt:qemu-v9.2.2-52 --install all; \
 		docker buildx create \
-			--name "gpustack" \
+			--name "cloud-mdgx" \
 			--driver "docker-container" \
 			--driver-opt "network=host,default-load=true,env.BUILDKIT_STEP_LOG_MAX_SIZE=-1,env.BUILDKIT_STEP_LOG_MAX_SPEED=-1" \
 			--buildkitd-flags "--allow-insecure-entitlement=security.insecure --allow-insecure-entitlement=network.host --oci-worker-net=host --oci-worker-gc-keepstorage=204800" \
 			--bootstrap; \
 	fi
+	INPUT_REGISTRY=$(PACKAGE_REGISTRY) \
 	INPUT_NAMESPACE=$(PACKAGE_NAMESPACE) \
 	INPUT_REPOSITORY=$(PACKAGE_REPOSITORY) \
 	INPUT_POST_OPERATION=$(PACKAGE_POST_OPERATION) \
@@ -108,13 +110,13 @@ package:
 		JOB_BACKEND=$$(echo "$${BUILD_JOB}" | jq -r '.backend'); \
 		JOB_PLATFORM=$$(echo "$${BUILD_JOB}" | jq -r '.platform'); \
 		JOB_TARGET=$$(echo "$${BUILD_JOB}" | jq -r '.service'); \
-		JOB_TAG=$(PACKAGE_NAMESPACE)/$(PACKAGE_REPOSITORY):$$(echo "$${BUILD_JOB}" | jq -r '.platform_tag'); \
+		JOB_TAG=$(PACKAGE_REGISTRY)/$(PACKAGE_NAMESPACE)/$(PACKAGE_REPOSITORY):$$(echo "$${BUILD_JOB}" | jq -r '.platform_tag'); \
 		JOB_ARGS=($$(echo "$${BUILD_JOB}" | jq -r '.args | map("--build-arg " + .) | join(" ")')); \
 		JOB_PLATFORM_CACHE=$$(echo "$${BUILD_JOB}" | jq -r '.platform_tag_cache | join(" ")'); \
 		JOB_EXTRA_ARGS=(); \
 		if [[ "$(PACKAGE_WITH_CACHE)" == "true" ]]; then \
 			for TAG_CACHE in $${JOB_PLATFORM_CACHE}; do \
-				JOB_EXTRA_ARGS+=("--cache-from=type=registry,ref=gpustack/runner-build-cache:$${TAG_CACHE}"); \
+				JOB_EXTRA_ARGS+=("--cache-from=type=registry,ref=$(PACKAGE_REGISTRY)/$(PACKAGE_NAMESPACE)/$(PACKAGE_CACHE_REPOSITORY):$${TAG_CACHE}"); \
 			done; \
 		fi; \
 		if [[ "$(PACKAGE_PUSH)" == "true" || "$(PACKAGE_CACHE_PUSH)" == "true" ]] && [[ -z "$(PACKAGE_POST_OPERATION)" ]]; then \
@@ -134,7 +136,7 @@ package:
 		docker buildx build \
 			--allow network.host \
 			--allow security.insecure \
-			--builder "gpustack" \
+			--builder "cloud-mdgx" \
 			--platform "$${JOB_PLATFORM}" \
 			--target "$${JOB_TARGET}" \
 			--tag "$${JOB_TAG}" \

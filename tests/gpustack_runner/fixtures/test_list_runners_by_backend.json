@@ -13,7 +13,7 @@
         "service": "mindie",
         "service_version": "2.2.rc1",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.3-a3-mindie2.2.rc1",
+        "docker_image": "cloud-mdgx/runner:cann8.3-a3-mindie2.2.rc1",
         "deprecated": false
       },
       {
@@ -24,7 +24,7 @@
         "service": "mindie",
         "service_version": "2.2.rc1",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.3-a3-mindie2.2.rc1",
+        "docker_image": "cloud-mdgx/runner:cann8.3-a3-mindie2.2.rc1",
         "deprecated": false
       },
       {
@@ -35,7 +35,7 @@
         "service": "sglang",
         "service_version": "0.5.6.post2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.3-a3-sglang0.5.6.post2",
+        "docker_image": "cloud-mdgx/runner:cann8.3-a3-sglang0.5.6.post2",
         "deprecated": false
       },
       {
@@ -46,7 +46,7 @@
         "service": "vllm",
         "service_version": "0.12.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.3-a3-vllm0.12.0",
+        "docker_image": "cloud-mdgx/runner:cann8.3-a3-vllm0.12.0",
         "deprecated": false
       },
       {
@@ -57,7 +57,7 @@
         "service": "vllm",
         "service_version": "0.12.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.3-a3-vllm0.12.0",
+        "docker_image": "cloud-mdgx/runner:cann8.3-a3-vllm0.12.0",
         "deprecated": false
       },
       {
@@ -68,7 +68,7 @@
         "service": "vllm",
         "service_version": "0.11.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.3-a3-vllm0.11.0",
+        "docker_image": "cloud-mdgx/runner:cann8.3-a3-vllm0.11.0",
         "deprecated": false
       },
       {
@@ -79,7 +79,7 @@
         "service": "vllm",
         "service_version": "0.11.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.3-a3-vllm0.11.0",
+        "docker_image": "cloud-mdgx/runner:cann8.3-a3-vllm0.11.0",
         "deprecated": false
       },
       {
@@ -90,7 +90,7 @@
         "service": "mindie",
         "service_version": "2.1.rc2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-a3-mindie2.1.rc2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-a3-mindie2.1.rc2",
         "deprecated": false
       },
       {
@@ -101,7 +101,7 @@
         "service": "mindie",
         "service_version": "2.1.rc2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-a3-mindie2.1.rc2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-a3-mindie2.1.rc2",
         "deprecated": false
       },
       {
@@ -112,7 +112,7 @@
         "service": "sglang",
         "service_version": "0.5.2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-a3-sglang0.5.2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-a3-sglang0.5.2",
         "deprecated": false
       },
       {
@@ -123,7 +123,7 @@
         "service": "sglang",
         "service_version": "0.5.2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-a3-sglang0.5.2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-a3-sglang0.5.2",
         "deprecated": false
       },
       {
@@ -134,7 +134,7 @@
         "service": "sglang",
         "service_version": "0.5.1.post3",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-a3-sglang0.5.1.post3",
+        "docker_image": "cloud-mdgx/runner:cann8.2-a3-sglang0.5.1.post3",
         "deprecated": false
       },
       {
@@ -145,7 +145,7 @@
         "service": "sglang",
         "service_version": "0.5.1.post3",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-a3-sglang0.5.1.post3",
+        "docker_image": "cloud-mdgx/runner:cann8.2-a3-sglang0.5.1.post3",
         "deprecated": false
       },
       {
@@ -156,7 +156,7 @@
         "service": "vllm",
         "service_version": "0.10.2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-a3-vllm0.10.2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-a3-vllm0.10.2",
         "deprecated": false
       },
       {
@@ -167,7 +167,7 @@
         "service": "vllm",
         "service_version": "0.10.2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-a3-vllm0.10.2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-a3-vllm0.10.2",
         "deprecated": false
       },
       {
@@ -178,7 +178,7 @@
         "service": "vllm",
         "service_version": "0.10.1.1",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-a3-vllm0.10.1.1",
+        "docker_image": "cloud-mdgx/runner:cann8.2-a3-vllm0.10.1.1",
         "deprecated": false
       },
       {
@@ -189,7 +189,7 @@
         "service": "vllm",
         "service_version": "0.10.1.1",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-a3-vllm0.10.1.1",
+        "docker_image": "cloud-mdgx/runner:cann8.2-a3-vllm0.10.1.1",
         "deprecated": false
       },
       {
@@ -200,7 +200,7 @@
         "service": "mindie",
         "service_version": "2.2.rc1",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.3-910b-mindie2.2.rc1",
+        "docker_image": "cloud-mdgx/runner:cann8.3-910b-mindie2.2.rc1",
         "deprecated": false
       },
       {
@@ -211,7 +211,7 @@
         "service": "mindie",
         "service_version": "2.2.rc1",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.3-910b-mindie2.2.rc1",
+        "docker_image": "cloud-mdgx/runner:cann8.3-910b-mindie2.2.rc1",
         "deprecated": false
       },
       {
@@ -222,7 +222,7 @@
         "service": "sglang",
         "service_version": "0.5.6.post2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.3-910b-sglang0.5.6.post2",
+        "docker_image": "cloud-mdgx/runner:cann8.3-910b-sglang0.5.6.post2",
         "deprecated": false
       },
       {
@@ -233,7 +233,7 @@
         "service": "vllm",
         "service_version": "0.12.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.3-910b-vllm0.12.0",
+        "docker_image": "cloud-mdgx/runner:cann8.3-910b-vllm0.12.0",
         "deprecated": false
       },
       {
@@ -244,7 +244,7 @@
         "service": "vllm",
         "service_version": "0.12.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.3-910b-vllm0.12.0",
+        "docker_image": "cloud-mdgx/runner:cann8.3-910b-vllm0.12.0",
         "deprecated": false
       },
       {
@@ -255,7 +255,7 @@
         "service": "vllm",
         "service_version": "0.11.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.3-910b-vllm0.11.0",
+        "docker_image": "cloud-mdgx/runner:cann8.3-910b-vllm0.11.0",
         "deprecated": false
       },
       {
@@ -266,7 +266,7 @@
         "service": "vllm",
         "service_version": "0.11.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.3-910b-vllm0.11.0",
+        "docker_image": "cloud-mdgx/runner:cann8.3-910b-vllm0.11.0",
         "deprecated": false
       },
       {
@@ -277,7 +277,7 @@
         "service": "mindie",
         "service_version": "2.1.rc1",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-910b-mindie2.1.rc1",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-mindie2.1.rc1",
         "deprecated": false
       },
       {
@@ -288,7 +288,7 @@
         "service": "mindie",
         "service_version": "2.1.rc2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-910b-mindie2.1.rc2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-mindie2.1.rc2",
         "deprecated": false
       },
       {
@@ -299,7 +299,7 @@
         "service": "mindie",
         "service_version": "2.1.rc1",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-910b-mindie2.1.rc1",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-mindie2.1.rc1",
         "deprecated": false
       },
       {
@@ -310,7 +310,7 @@
         "service": "mindie",
         "service_version": "2.1.rc2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-910b-mindie2.1.rc2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-mindie2.1.rc2",
         "deprecated": false
       },
       {
@@ -321,7 +321,7 @@
         "service": "sglang",
         "service_version": "0.5.2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-910b-sglang0.5.2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-sglang0.5.2",
         "deprecated": false
       },
       {
@@ -332,7 +332,7 @@
         "service": "sglang",
         "service_version": "0.5.2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-910b-sglang0.5.2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-sglang0.5.2",
         "deprecated": false
       },
       {
@@ -343,7 +343,7 @@
         "service": "sglang",
         "service_version": "0.5.1.post3",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-910b-sglang0.5.1.post3",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-sglang0.5.1.post3",
         "deprecated": false
       },
       {
@@ -354,7 +354,7 @@
         "service": "sglang",
         "service_version": "0.5.1.post3",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-910b-sglang0.5.1.post3",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-sglang0.5.1.post3",
         "deprecated": false
       },
       {
@@ -365,7 +365,7 @@
         "service": "vllm",
         "service_version": "0.10.2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-910b-vllm0.10.2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-vllm0.10.2",
         "deprecated": false
       },
       {
@@ -376,7 +376,7 @@
         "service": "vllm",
         "service_version": "0.10.2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-910b-vllm0.10.2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-vllm0.10.2",
         "deprecated": false
       },
       {
@@ -387,7 +387,7 @@
         "service": "vllm",
         "service_version": "0.10.1.1",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-910b-vllm0.10.1.1",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-vllm0.10.1.1",
         "deprecated": false
       },
       {
@@ -398,7 +398,7 @@
         "service": "vllm",
         "service_version": "0.10.1.1",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-910b-vllm0.10.1.1",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-vllm0.10.1.1",
         "deprecated": false
       },
       {
@@ -409,7 +409,7 @@
         "service": "vllm",
         "service_version": "0.10.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-910b-vllm0.10.0",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-vllm0.10.0",
         "deprecated": false
       },
       {
@@ -420,7 +420,7 @@
         "service": "vllm",
         "service_version": "0.10.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-910b-vllm0.10.0",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-vllm0.10.0",
         "deprecated": false
       },
       {
@@ -431,7 +431,7 @@
         "service": "vllm",
         "service_version": "0.9.2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-910b-vllm0.9.2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-vllm0.9.2",
         "deprecated": false
       },
       {
@@ -442,7 +442,7 @@
         "service": "vllm",
         "service_version": "0.9.2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-910b-vllm0.9.2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-vllm0.9.2",
         "deprecated": false
       },
       {
@@ -453,7 +453,7 @@
         "service": "vllm",
         "service_version": "0.9.1",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-910b-vllm0.9.1",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-vllm0.9.1",
         "deprecated": false
       },
       {
@@ -464,7 +464,7 @@
         "service": "vllm",
         "service_version": "0.9.1",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-910b-vllm0.9.1",
+        "docker_image": "cloud-mdgx/runner:cann8.2-910b-vllm0.9.1",
         "deprecated": false
       },
       {
@@ -475,7 +475,7 @@
         "service": "mindie",
         "service_version": "2.2.rc1",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.3-310p-mindie2.2.rc1",
+        "docker_image": "cloud-mdgx/runner:cann8.3-310p-mindie2.2.rc1",
         "deprecated": false
       },
       {
@@ -486,7 +486,7 @@
         "service": "mindie",
         "service_version": "2.2.rc1",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.3-310p-mindie2.2.rc1",
+        "docker_image": "cloud-mdgx/runner:cann8.3-310p-mindie2.2.rc1",
         "deprecated": false
       },
       {
@@ -497,7 +497,7 @@
         "service": "mindie",
         "service_version": "2.1.rc1",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-310p-mindie2.1.rc1",
+        "docker_image": "cloud-mdgx/runner:cann8.2-310p-mindie2.1.rc1",
         "deprecated": false
       },
       {
@@ -508,7 +508,7 @@
         "service": "mindie",
         "service_version": "2.1.rc2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-310p-mindie2.1.rc2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-310p-mindie2.1.rc2",
         "deprecated": false
       },
       {
@@ -519,7 +519,7 @@
         "service": "mindie",
         "service_version": "2.1.rc1",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-310p-mindie2.1.rc1",
+        "docker_image": "cloud-mdgx/runner:cann8.2-310p-mindie2.1.rc1",
         "deprecated": false
       },
       {
@@ -530,7 +530,7 @@
         "service": "mindie",
         "service_version": "2.1.rc2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-310p-mindie2.1.rc2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-310p-mindie2.1.rc2",
         "deprecated": false
       },
       {
@@ -541,7 +541,7 @@
         "service": "vllm",
         "service_version": "0.10.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-310p-vllm0.10.0",
+        "docker_image": "cloud-mdgx/runner:cann8.2-310p-vllm0.10.0",
         "deprecated": false
       },
       {
@@ -552,7 +552,7 @@
         "service": "vllm",
         "service_version": "0.10.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-310p-vllm0.10.0",
+        "docker_image": "cloud-mdgx/runner:cann8.2-310p-vllm0.10.0",
         "deprecated": false
       },
       {
@@ -563,7 +563,7 @@
         "service": "vllm",
         "service_version": "0.9.2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cann8.2-310p-vllm0.9.2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-310p-vllm0.9.2",
         "deprecated": false
       },
       {
@@ -574,7 +574,7 @@
         "service": "vllm",
         "service_version": "0.9.2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cann8.2-310p-vllm0.9.2",
+        "docker_image": "cloud-mdgx/runner:cann8.2-310p-vllm0.9.2",
         "deprecated": false
       }
     ]
@@ -593,7 +593,7 @@
         "service": "vllm",
         "service_version": "0.8.3",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:corex4.2-vllm0.8.3",
+        "docker_image": "cloud-mdgx/runner:corex4.2-vllm0.8.3",
         "deprecated": false
       }
     ]
@@ -612,7 +612,7 @@
         "service": "sglang",
         "service_version": "0.5.6.post2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.9-sglang0.5.6.post2",
+        "docker_image": "cloud-mdgx/runner:cuda12.9-sglang0.5.6.post2",
         "deprecated": false
       },
       {
@@ -623,7 +623,7 @@
         "service": "sglang",
         "service_version": "0.5.6.post2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.9-sglang0.5.6.post2",
+        "docker_image": "cloud-mdgx/runner:cuda12.9-sglang0.5.6.post2",
         "deprecated": false
       },
       {
@@ -634,7 +634,7 @@
         "service": "vllm",
         "service_version": "0.13.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.9-vllm0.13.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.9-vllm0.13.0",
         "deprecated": false
       },
       {
@@ -645,7 +645,7 @@
         "service": "vllm",
         "service_version": "0.13.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.9-vllm0.13.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.9-vllm0.13.0",
         "deprecated": false
       },
       {
@@ -656,7 +656,7 @@
         "service": "vllm",
         "service_version": "0.12.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.9-vllm0.12.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.9-vllm0.12.0",
         "deprecated": false
       },
       {
@@ -667,7 +667,7 @@
         "service": "vllm",
         "service_version": "0.12.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.9-vllm0.12.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.9-vllm0.12.0",
         "deprecated": false
       },
       {
@@ -678,7 +678,7 @@
         "service": "vllm",
         "service_version": "0.11.2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.9-vllm0.11.2",
+        "docker_image": "cloud-mdgx/runner:cuda12.9-vllm0.11.2",
         "deprecated": false
       },
       {
@@ -689,7 +689,7 @@
         "service": "vllm",
         "service_version": "0.11.2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.9-vllm0.11.2",
+        "docker_image": "cloud-mdgx/runner:cuda12.9-vllm0.11.2",
         "deprecated": false
       },
       {
@@ -700,7 +700,7 @@
         "service": "sglang",
         "service_version": "0.5.6.post2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.8-sglang0.5.6.post2",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-sglang0.5.6.post2",
         "deprecated": false
       },
       {
@@ -711,7 +711,7 @@
         "service": "sglang",
         "service_version": "0.5.6.post2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.8-sglang0.5.6.post2",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-sglang0.5.6.post2",
         "deprecated": false
       },
       {
@@ -722,7 +722,7 @@
         "service": "sglang",
         "service_version": "0.5.5",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.8-sglang0.5.5",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-sglang0.5.5",
         "deprecated": false
       },
       {
@@ -733,7 +733,7 @@
         "service": "sglang",
         "service_version": "0.5.5.post3",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.8-sglang0.5.5.post3",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-sglang0.5.5.post3",
         "deprecated": false
       },
       {
@@ -744,7 +744,7 @@
         "service": "sglang",
         "service_version": "0.5.5",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.8-sglang0.5.5",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-sglang0.5.5",
         "deprecated": false
       },
       {
@@ -755,7 +755,7 @@
         "service": "sglang",
         "service_version": "0.5.4.post3",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.8-sglang0.5.4.post3",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-sglang0.5.4.post3",
         "deprecated": false
       },
       {
@@ -766,7 +766,7 @@
         "service": "sglang",
         "service_version": "0.5.4.post3",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.8-sglang0.5.4.post3",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-sglang0.5.4.post3",
         "deprecated": false
       },
       {
@@ -777,7 +777,7 @@
         "service": "vllm",
         "service_version": "0.13.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.8-vllm0.13.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-vllm0.13.0",
         "deprecated": false
       },
       {
@@ -788,7 +788,7 @@
         "service": "vllm",
         "service_version": "0.13.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.8-vllm0.13.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-vllm0.13.0",
         "deprecated": false
       },
       {
@@ -799,7 +799,7 @@
         "service": "vllm",
         "service_version": "0.12.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.8-vllm0.12.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-vllm0.12.0",
         "deprecated": false
       },
       {
@@ -810,7 +810,7 @@
         "service": "vllm",
         "service_version": "0.12.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.8-vllm0.12.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-vllm0.12.0",
         "deprecated": false
       },
       {
@@ -821,7 +821,7 @@
         "service": "vllm",
         "service_version": "0.11.2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.8-vllm0.11.2",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-vllm0.11.2",
         "deprecated": false
       },
       {
@@ -832,7 +832,7 @@
         "service": "vllm",
         "service_version": "0.11.2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.8-vllm0.11.2",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-vllm0.11.2",
         "deprecated": false
       },
       {
@@ -843,7 +843,7 @@
         "service": "vllm",
         "service_version": "0.11.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.8-vllm0.11.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-vllm0.11.0",
         "deprecated": false
       },
       {
@@ -854,7 +854,7 @@
         "service": "vllm",
         "service_version": "0.11.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.8-vllm0.11.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-vllm0.11.0",
         "deprecated": false
       },
       {
@@ -865,7 +865,7 @@
         "service": "vllm",
         "service_version": "0.10.2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.8-vllm0.10.2",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-vllm0.10.2",
         "deprecated": false
       },
       {
@@ -876,7 +876,7 @@
         "service": "vllm",
         "service_version": "0.10.2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.8-vllm0.10.2",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-vllm0.10.2",
         "deprecated": false
       },
       {
@@ -887,7 +887,7 @@
         "service": "vllm",
         "service_version": "0.10.1.1",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.8-vllm0.10.1.1",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-vllm0.10.1.1",
         "deprecated": false
       },
       {
@@ -898,7 +898,7 @@
         "service": "vllm",
         "service_version": "0.10.1.1",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.8-vllm0.10.1.1",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-vllm0.10.1.1",
         "deprecated": false
       },
       {
@@ -909,7 +909,7 @@
         "service": "vllm",
         "service_version": "0.10.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.8-vllm0.10.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-vllm0.10.0",
         "deprecated": false
       },
       {
@@ -920,7 +920,7 @@
         "service": "vllm",
         "service_version": "0.10.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.8-vllm0.10.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-vllm0.10.0",
         "deprecated": false
       },
       {
@@ -931,7 +931,7 @@
         "service": "voxbox",
         "service_version": "0.0.21",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.8-voxbox0.0.21",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-voxbox0.0.21",
         "deprecated": false
       },
       {
@@ -942,7 +942,7 @@
         "service": "voxbox",
         "service_version": "0.0.21",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.8-voxbox0.0.21",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-voxbox0.0.21",
         "deprecated": false
       },
       {
@@ -953,7 +953,7 @@
         "service": "voxbox",
         "service_version": "0.0.20",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.8-voxbox0.0.20",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-voxbox0.0.20",
         "deprecated": false
       },
       {
@@ -964,7 +964,7 @@
         "service": "voxbox",
         "service_version": "0.0.20",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.8-voxbox0.0.20",
+        "docker_image": "cloud-mdgx/runner:cuda12.8-voxbox0.0.20",
         "deprecated": false
       },
       {
@@ -975,7 +975,7 @@
         "service": "vllm",
         "service_version": "0.13.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.6-vllm0.13.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-vllm0.13.0",
         "deprecated": false
       },
       {
@@ -986,7 +986,7 @@
         "service": "vllm",
         "service_version": "0.13.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.6-vllm0.13.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-vllm0.13.0",
         "deprecated": false
       },
       {
@@ -997,7 +997,7 @@
         "service": "vllm",
         "service_version": "0.12.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.6-vllm0.12.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-vllm0.12.0",
         "deprecated": false
       },
       {
@@ -1008,7 +1008,7 @@
         "service": "vllm",
         "service_version": "0.12.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.6-vllm0.12.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-vllm0.12.0",
         "deprecated": false
       },
       {
@@ -1019,7 +1019,7 @@
         "service": "vllm",
         "service_version": "0.11.2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.6-vllm0.11.2",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-vllm0.11.2",
         "deprecated": false
       },
       {
@@ -1030,7 +1030,7 @@
         "service": "vllm",
         "service_version": "0.11.2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.6-vllm0.11.2",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-vllm0.11.2",
         "deprecated": false
       },
       {
@@ -1041,7 +1041,7 @@
         "service": "vllm",
         "service_version": "0.11.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.6-vllm0.11.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-vllm0.11.0",
         "deprecated": false
       },
       {
@@ -1052,7 +1052,7 @@
         "service": "vllm",
         "service_version": "0.11.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.6-vllm0.11.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-vllm0.11.0",
         "deprecated": false
       },
       {
@@ -1063,7 +1063,7 @@
         "service": "vllm",
         "service_version": "0.10.2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.6-vllm0.10.2",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-vllm0.10.2",
         "deprecated": false
       },
       {
@@ -1074,7 +1074,7 @@
         "service": "vllm",
         "service_version": "0.10.2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.6-vllm0.10.2",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-vllm0.10.2",
         "deprecated": false
       },
       {
@@ -1085,7 +1085,7 @@
         "service": "vllm",
         "service_version": "0.10.1.1",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.6-vllm0.10.1.1",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-vllm0.10.1.1",
         "deprecated": false
       },
       {
@@ -1096,7 +1096,7 @@
         "service": "vllm",
         "service_version": "0.10.1.1",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.6-vllm0.10.1.1",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-vllm0.10.1.1",
         "deprecated": false
       },
       {
@@ -1107,7 +1107,7 @@
         "service": "vllm",
         "service_version": "0.10.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.6-vllm0.10.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-vllm0.10.0",
         "deprecated": false
       },
       {
@@ -1118,7 +1118,7 @@
         "service": "vllm",
         "service_version": "0.10.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.6-vllm0.10.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-vllm0.10.0",
         "deprecated": false
       },
       {
@@ -1129,7 +1129,7 @@
         "service": "voxbox",
         "service_version": "0.0.21",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.6-voxbox0.0.21",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-voxbox0.0.21",
         "deprecated": false
       },
       {
@@ -1140,7 +1140,7 @@
         "service": "voxbox",
         "service_version": "0.0.21",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.6-voxbox0.0.21",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-voxbox0.0.21",
         "deprecated": false
       },
       {
@@ -1151,7 +1151,7 @@
         "service": "voxbox",
         "service_version": "0.0.20",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.6-voxbox0.0.20",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-voxbox0.0.20",
         "deprecated": false
       },
       {
@@ -1162,7 +1162,7 @@
         "service": "voxbox",
         "service_version": "0.0.20",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.6-voxbox0.0.20",
+        "docker_image": "cloud-mdgx/runner:cuda12.6-voxbox0.0.20",
         "deprecated": false
       },
       {
@@ -1173,7 +1173,7 @@
         "service": "vllm",
         "service_version": "0.11.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.4-vllm0.11.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.4-vllm0.11.0",
         "deprecated": false
       },
       {
@@ -1184,7 +1184,7 @@
         "service": "vllm",
         "service_version": "0.11.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.4-vllm0.11.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.4-vllm0.11.0",
         "deprecated": false
       },
       {
@@ -1195,7 +1195,7 @@
         "service": "vllm",
         "service_version": "0.10.2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.4-vllm0.10.2",
+        "docker_image": "cloud-mdgx/runner:cuda12.4-vllm0.10.2",
         "deprecated": false
       },
       {
@@ -1206,7 +1206,7 @@
         "service": "vllm",
         "service_version": "0.10.2",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.4-vllm0.10.2",
+        "docker_image": "cloud-mdgx/runner:cuda12.4-vllm0.10.2",
         "deprecated": false
       },
       {
@@ -1217,7 +1217,7 @@
         "service": "vllm",
         "service_version": "0.10.1.1",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.4-vllm0.10.1.1",
+        "docker_image": "cloud-mdgx/runner:cuda12.4-vllm0.10.1.1",
         "deprecated": false
       },
       {
@@ -1228,7 +1228,7 @@
         "service": "vllm",
         "service_version": "0.10.1.1",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.4-vllm0.10.1.1",
+        "docker_image": "cloud-mdgx/runner:cuda12.4-vllm0.10.1.1",
         "deprecated": false
       },
       {
@@ -1239,7 +1239,7 @@
         "service": "vllm",
         "service_version": "0.10.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.4-vllm0.10.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.4-vllm0.10.0",
         "deprecated": false
       },
       {
@@ -1250,7 +1250,7 @@
         "service": "vllm",
         "service_version": "0.10.0",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.4-vllm0.10.0",
+        "docker_image": "cloud-mdgx/runner:cuda12.4-vllm0.10.0",
         "deprecated": false
       },
       {
@@ -1261,7 +1261,7 @@
         "service": "voxbox",
         "service_version": "0.0.20",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:cuda12.4-voxbox0.0.20",
+        "docker_image": "cloud-mdgx/runner:cuda12.4-voxbox0.0.20",
         "deprecated": false
       },
       {
@@ -1272,7 +1272,7 @@
         "service": "voxbox",
         "service_version": "0.0.20",
         "platform": "linux/arm64",
-        "docker_image": "gpustack/runner:cuda12.4-voxbox0.0.20",
+        "docker_image": "cloud-mdgx/runner:cuda12.4-voxbox0.0.20",
         "deprecated": false
       }
     ]
@@ -1291,7 +1291,7 @@
         "service": "vllm",
         "service_version": "0.9.2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:dtk25.04-vllm0.9.2",
+        "docker_image": "cloud-mdgx/runner:dtk25.04-vllm0.9.2",
         "deprecated": false
       },
       {
@@ -1302,7 +1302,7 @@
         "service": "vllm",
         "service_version": "0.8.5",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:dtk25.04-vllm0.8.5",
+        "docker_image": "cloud-mdgx/runner:dtk25.04-vllm0.8.5",
         "deprecated": false
       }
     ]
@@ -1321,7 +1321,7 @@
         "service": "vllm",
         "service_version": "0.10.2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:maca3.2-vllm0.10.2",
+        "docker_image": "cloud-mdgx/runner:maca3.2-vllm0.10.2",
         "deprecated": false
       },
       {
@@ -1332,7 +1332,7 @@
         "service": "vllm",
         "service_version": "0.9.1",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:maca3.0-vllm0.9.1",
+        "docker_image": "cloud-mdgx/runner:maca3.0-vllm0.9.1",
         "deprecated": false
       }
     ]
@@ -1351,7 +1351,7 @@
         "service": "sglang",
         "service_version": "0.5.6.post2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:rocm7.0-sglang0.5.6.post2",
+        "docker_image": "cloud-mdgx/runner:rocm7.0-sglang0.5.6.post2",
         "deprecated": false
       },
       {
@@ -1362,7 +1362,7 @@
         "service": "vllm",
         "service_version": "0.13.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:rocm7.0-vllm0.13.0",
+        "docker_image": "cloud-mdgx/runner:rocm7.0-vllm0.13.0",
         "deprecated": false
       },
       {
@@ -1373,7 +1373,7 @@
         "service": "vllm",
         "service_version": "0.12.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:rocm7.0-vllm0.12.0",
+        "docker_image": "cloud-mdgx/runner:rocm7.0-vllm0.12.0",
         "deprecated": false
       },
       {
@@ -1384,7 +1384,7 @@
         "service": "vllm",
         "service_version": "0.11.2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:rocm7.0-vllm0.11.2",
+        "docker_image": "cloud-mdgx/runner:rocm7.0-vllm0.11.2",
         "deprecated": false
       },
       {
@@ -1395,7 +1395,7 @@
         "service": "vllm",
         "service_version": "0.11.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:rocm7.0-vllm0.11.0",
+        "docker_image": "cloud-mdgx/runner:rocm7.0-vllm0.11.0",
         "deprecated": false
       },
       {
@@ -1406,7 +1406,7 @@
         "service": "sglang",
         "service_version": "0.5.6.post2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:rocm6.4-sglang0.5.6.post2",
+        "docker_image": "cloud-mdgx/runner:rocm6.4-sglang0.5.6.post2",
         "deprecated": false
       },
       {
@@ -1417,7 +1417,7 @@
         "service": "sglang",
         "service_version": "0.5.5.post3",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:rocm6.4-sglang0.5.5.post3",
+        "docker_image": "cloud-mdgx/runner:rocm6.4-sglang0.5.5.post3",
         "deprecated": false
       },
       {
@@ -1428,7 +1428,7 @@
         "service": "vllm",
         "service_version": "0.13.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:rocm6.4-vllm0.13.0",
+        "docker_image": "cloud-mdgx/runner:rocm6.4-vllm0.13.0",
         "deprecated": false
       },
       {
@@ -1439,7 +1439,7 @@
         "service": "vllm",
         "service_version": "0.12.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:rocm6.4-vllm0.12.0",
+        "docker_image": "cloud-mdgx/runner:rocm6.4-vllm0.12.0",
         "deprecated": false
       },
       {
@@ -1450,7 +1450,7 @@
         "service": "vllm",
         "service_version": "0.11.2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:rocm6.4-vllm0.11.2",
+        "docker_image": "cloud-mdgx/runner:rocm6.4-vllm0.11.2",
         "deprecated": false
       },
       {
@@ -1461,7 +1461,7 @@
         "service": "vllm",
         "service_version": "0.10.2",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:rocm6.4-vllm0.10.2",
+        "docker_image": "cloud-mdgx/runner:rocm6.4-vllm0.10.2",
         "deprecated": false
       },
       {
@@ -1472,7 +1472,7 @@
         "service": "vllm",
         "service_version": "0.10.1.1",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:rocm6.3-vllm0.10.1.1",
+        "docker_image": "cloud-mdgx/runner:rocm6.3-vllm0.10.1.1",
         "deprecated": false
       },
       {
@@ -1483,7 +1483,7 @@
         "service": "vllm",
         "service_version": "0.10.0",
         "platform": "linux/amd64",
-        "docker_image": "gpustack/runner:rocm6.3-vllm0.10.0",
+        "docker_image": "cloud-mdgx/runner:rocm6.3-vllm0.10.0",
         "deprecated": false
       }
     ]
