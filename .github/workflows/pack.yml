@@ -300,16 +300,10 @@ jobs:
         env:
           INPUT_BUILD_JOBS: ${{ needs.expand-matrix.outputs.build_jobs }}
         run: ${{ github.workspace }}/pack/merge_runner.sh
-      - name: Generate Pull Request Token
-        id: generate-prt
-        uses: actions/create-github-app-token@v2
-        with:
-          app-id: ${{ secrets.CI_PRT_GENERATOR_ID }}
-          private-key: ${{ secrets.CI_PRT_GENERATOR_KEY }}
       - name: Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ steps.generate-prt.outputs.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           branch: "create-pull-request/merge-runner-${{ github.run_id }}"
           delete-branch: true
           commit-message: "chore: update runner by gha workflow ${{ github.run_id }}"
