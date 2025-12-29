@@ -336,5 +336,12 @@ echo "manifest_jobs="
 echo "${MANIFEST_JOBS}" | jq -r '.'
 
 # Export the build_jobs/manifest_jobs to GH output.
-echo "build_jobs=${BUILD_JOBS}" >>"$GITHUB_OUTPUT" || true
-echo "manifest_jobs=${MANIFEST_JOBS}" >>"$GITHUB_OUTPUT" || true
+if [[ -n "${GITHUB_OUTPUT}" ]]; then
+    echo "build_jobs<<EOF" >> "$GITHUB_OUTPUT"
+    echo "${BUILD_JOBS}" >> "$GITHUB_OUTPUT"
+    echo "EOF" >> "$GITHUB_OUTPUT"
+    
+    echo "manifest_jobs<<EOF" >> "$GITHUB_OUTPUT"
+    echo "${MANIFEST_JOBS}" >> "$GITHUB_OUTPUT"
+    echo "EOF" >> "$GITHUB_OUTPUT"
+fi
