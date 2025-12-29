@@ -9,7 +9,7 @@ ARG VLLM_DEEPGEMM_VERSION=2.1.1.post3
 # Stage vLLM Build DeepGEMM
 #
 
-FROM cloud-mdgx/runner:cuda${CUDA_VERSION}-vllm${VLLM_VERSION} AS vllm-build-deepgemm
+FROM swr.cn-east-3.myhuaweicloud.com/cloud-mdgx/runner:cuda${CUDA_VERSION}-vllm${VLLM_VERSION} AS vllm-build-deepgemm
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
 ARG TARGETPLATFORM
@@ -77,7 +77,7 @@ EOF
 # Stage vLLM Prepare
 #
 
-FROM cloud-mdgx/runner:cuda${CUDA_VERSION}-vllm${VLLM_VERSION} AS vllm-prepare
+FROM swr.cn-east-3.myhuaweicloud.com/cloud-mdgx/runner:cuda${CUDA_VERSION}-vllm${VLLM_VERSION} AS vllm-prepare
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
 ARG TARGETPLATFORM

@@ -4,7 +4,7 @@ ARG CANN_ARCHS=910b
 ARG VLLM_VERSION=0.11.0
 ARG SGLANG_VERSION=0.5.6.post2
 
-FROM cloud-mdgx/runner:cann${CANN_VERSION}-${CANN_ARCHS}-vllm${VLLM_VERSION} AS vllm
+FROM swr.cn-east-3.myhuaweicloud.com/cloud-mdgx/runner:cann${CANN_VERSION}-${CANN_ARCHS}-vllm${VLLM_VERSION} AS vllm
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
 ARG TARGETPLATFORM
@@ -36,7 +36,7 @@ ENV PATH="/usr/local/Ascend/ascend-toolkit/latest/bisheng_toolkit/bishengir/bin:
 WORKDIR /
 ENTRYPOINT [ "tini", "--" ]
 
-FROM cloud-mdgx/runner:cann${CANN_VERSION}-${CANN_ARCHS}-sglang${SGLANG_VERSION} AS sglang
+FROM swr.cn-east-3.myhuaweicloud.com/cloud-mdgx/runner:cann${CANN_VERSION}-${CANN_ARCHS}-sglang${SGLANG_VERSION} AS sglang
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
 ARG TARGETPLATFORM

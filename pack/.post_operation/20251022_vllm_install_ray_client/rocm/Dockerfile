@@ -2,7 +2,7 @@ ARG CMAKE_MAX_JOBS
 ARG ROCM_VERSION=6.3
 ARG VLLM_VERSION=0.10.0
 
-FROM cloud-mdgx/runner:rocm${ROCM_VERSION}-vllm${VLLM_VERSION} AS vllm
+FROM swr.cn-east-3.myhuaweicloud.com/cloud-mdgx/runner:rocm${ROCM_VERSION}-vllm${VLLM_VERSION} AS vllm
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
 ARG TARGETPLATFORM

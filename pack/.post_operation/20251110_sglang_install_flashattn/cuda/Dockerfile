@@ -3,7 +3,7 @@ ARG CUDA_VERSION=12.4
 ARG SGLANG_VERSION=0.5.5
 ARG SGLANG_FLASHATTN_VERSION=2.8.3
 
-FROM cloud-mdgx/runner:cuda${CUDA_VERSION}-sglang${SGLANG_VERSION} AS sglang
+FROM swr.cn-east-3.myhuaweicloud.com/cloud-mdgx/runner:cuda${CUDA_VERSION}-sglang${SGLANG_VERSION} AS sglang
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
 ARG TARGETPLATFORM
